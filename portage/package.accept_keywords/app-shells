@@ -1,0 +1,7 @@
+app-shells/auto-fu-zsh ~amd64
+app-shells/fast-syntax-highlighting ~amd64
+app-shells/runtitle ~amd64
+app-shells/set_prompt ~amd64
+app-shells/thefuck ~amd64
+app-shells/zsh-autosuggestions ~amd64
+=app-shells/powerline-2.7-r1 ~amd64

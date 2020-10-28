@@ -1,0 +1,254 @@
+app-admin/conky X curl hddtemp imlib iostats lua-cairo lua-imlib math moc mpd rss weather-metar
+app-admin/keepassxc browser ccache autotype
+app-admin/pass dmenu importers
+app-admin/sudo -skey
+app-admin/sysstat lm-sensors
+app-arch/libarchive expat lzo nettle
+app-arch/p7zip rar
+app-arch/xz-utils static-libs
+app-backup/dar dar64 gcrypt lzo
+app-crypt/argon2 static-libs
+app-crypt/gnupg doc smartcard tools usb wks-server
+app-crypt/gpgme -qt5
+app-crypt/p11-kit libffi
+app-emulation/docker aufs
+app-emulation/qemu curl jpeg nfs png qemu_softmmu_targets_aarch64 qemu_user_targets_aarch64 qemu_user_targets_x86_64 ssh tci usb usbredir vde vte xfs
+app-emulation/virtualbox-modules -pax_kernel
+app-misc/mc X -slang
+app-office/gnucash ofx
+app-office/libreoffice-bin java
+app-office/libreoffice java googledrive pdfimport
+app-portage/eix doc sqlite nls
+app-portage/layman mercurial sqlite squashfs sync-plugin-portage
+app-shells/bash net
+app-shells/zsh doc examples gdbm maildir
+app-text/asciidoc graphviz highlight
+app-text/calibre -udisks
+app-text/ghostscript-gpl cups
+app-text/mupdf X
+app-text/pandoc hscolour
+app-text/poppler cairo curl jpeg -jpeg2k png tiff utils qt5
+app-text/xmlto text
+app-text/xournal pdf
+dev-cpp/cairomm X svg
+dev-cpp/gtkmm X
+dev-db/sqlite icu secure-delete tools
+dev-dotnet/libgdiplus cairo
+dev-haskell/binary hscolour
+dev-haskell/byteable hscolour
+dev-haskell/data-default-class hscolour
+dev-haskell/exceptions hscolour
+dev-haskell/hashable hscolour
+dev-haskell/mtl hscolour
+dev-haskell/network hscolour
+dev-haskell/old-locale hscolour
+dev-haskell/parsec hscolour
+dev-haskell/random hscolour
+dev-haskell/securemem hscolour
+dev-haskell/stm hscolour
+dev-haskell/text hscolour
+dev-haskell/transformers-compat hscolour
+dev-haskell/transformers hscolour
+dev-haskell/unordered-containers hscolour
+dev-lang/fpc source
+dev-lang/luajit lua52compat
+dev-lang/mono minimal
+dev-lang/perl berkdb gdbm
+dev-lang/php -apache2 curl gd imap
+dev-lang/python sqlite -ipv6
+dev-libs/boost context icu mpi tools
+dev-libs/cyrus-sasl berkdb gdbm -ssl
+dev-libs/elfutils utils
+dev-libs/gmp static-libs
+dev-libs/json-c static-libs
+dev-libs/libaio static-libs
+>=dev-libs/libgpg-error-1.38 static-libs
+dev-libs/libpcre2 jit pcre16 pcre32
+dev-libs/libpcre jit pcre16 pcre32
+dev-libs/libressl static-libs
+dev-libs/libxml2 icu
+dev-libs/lzo -static-libs
+dev-libs/nettle cpu_flags_x86_aes static-libs
+>=dev-libs/popt-1.16-r2 static-libs
+dev-libs/xmlrpc-c curl
+dev-libs/xmlsec nss
+dev-ml/gsl-ocaml -ocamlopt
+dev-python/alabaster -python_targets_python3_7
+dev-python/Babel -python_targets_python2_7
+dev-python/namespace-sphinxcontrib -python_targets_python3_7
+>=dev-python/pypax-0.9.5 ptpax
+dev-python/PyQt5 gui network printsupport svg webchannel widgets
+dev-qt/qtcore icu
+dev-qt/qtgui X evdev gif jpeg png tslib tuio
+dev-qt/qtmultimedia widgets
+dev-qt/qtsingleapplication X
+dev-qt/qtsql sqlite
+dev-qt/qtwebchannel qml
+dev-qt/qtwebengine alsa designer jumbo-build widgets
+dev-qt/qtwidgets png
+dev-ruby/racc ruby_targets_ruby25
+dev-vcs/git curl doc highlight -iconv perl
+games-engines/scummvm aac alsa flac jpeg mp3 opengl png theora truetype vorbis
+gnustep-base/gnustep-base -gnutls
+gnustep-base/gnustep-make native-exceptions
+kde-frameworks/kwindowsystem X
+mail-client/mutt berkdb gdbm gpgme
+mail-client/neomutt gpgme notmuch slang
+media-fonts/croscorefonts -X
+media-fonts/font-misc-misc X
+media-fonts/powerline-symbols X
+media-gfx/digikam X webkit
+media-gfx/graphviz X cairo pdf svg
+media-gfx/imagemagick cxx X heif jpeg -jpeg2k png raw svg tiff xml
+media-gfx/inkscape imagemagick jpeg
+media-gfx/xv jpeg png tiff
+media-libs/flac ogg
+media-libs/freetype -X infinality png utils fontforge
+media-libs/gd fontconfig jpeg png truetype
+media-libs/gegl cairo
+media-libs/gst-plugins-bad X
+media-libs/gst-plugins-base X ogg
+media-libs/harfbuzz cairo icu truetype
+media-libs/imlib2 X gif jpeg mp3 png tiff
+media-libs/jbig2dec png
+media-libs/libass fontconfig
+media-libs/libcanberra alsa
+media-libs/libepoxy X
+media-libs/libglvnd X
+media-libs/libjpeg-turbo static-libs
+media-libs/libpng apng
+media-libs/libsdl2 X
+media-libs/libsdl X opengl
+media-libs/libsndfile alsa
+media-libs/libvpx cpu_flags_x86_sse4_1 postproc svc
+media-libs/mesa gles1 gles2 -vaapi -vdpau X
+media-libs/netpbm X jbig jpeg png tiff
+media-libs/openal alsa cpu_flags_x86_sse4_1
+media-libs/opencv openexr
+media-libs/phonon -vlc
+media-libs/sdl-image jpeg png
+media-libs/sdl-mixer flac mp3 smpeg vorbis
+media-libs/tiff jbig jpeg
+media-libs/vigra jpeg png tiff openexr
+media-plugins/alsa-plugins ffmpeg
+media-sound/moc aac alsa curl ffmpeg vorbis
+media-sound/mpd alsa curl ffmpeg flac icu lame libmpdclient openal twolame vorbis
+media-sound/pulseaudio X alsa bluetooth equalizer gdbm native-headset orc realtime sox tcpd
+media-video/ffmpeg X alsa amr amrenc chromium cpu_flags_x86_aes cpu_flags_x86_sse4_1 cpu_flags_x86_sse4_2 doc fdk gmp -jpeg2k kvazaar libass libcaca mp3 openal openh264 postproc rubberband ssh svg theora twolame -vaapi -vdpau vorbis vpx x264 x265 xvid zimg
+media-video/mpv X alsa cli cplugins drm dvd gbm jpeg lcms libmpv lua openal rubberband tools -vaapi -vdpau
+media-video/vlc ogg vorbis
+net-analyzer/linkchecker sqlite
+net-analyzer/nmap libssh2 ncat nping
+net-analyzer/rrdtool graph perl
+net-im/pidgin idn perl prediction
+net-irc/irssi perl
+net-libs/glib-networking -gnome
+net-libs/libpcap -bluetooth netlink static-libs usb
+net-libs/libssh mbedtls server
+net-libs/nghttp2 jemalloc utils cxx
+net-libs/webkit-gtk X -geolocation -jpeg2k libnotify
+net-libs/zeromq drafts
+net-mail/notmuch mutt
+net-misc/aria2 bittorrent libuv scripts ssh tcmalloc
+net-misc/curl -curl_ssl_gnutls -curl_ssl_nss http2 idn ssh
+net-misc/iputils gcrypt
+net-misc/rsync stunnel lz4 xxhash zstd examples
+net-misc/wget idn uuid
+net-nds/openldap -ssl
+net-p2p/qbittorrent -X -dbus
+net-p2p/rtorrent xmlrpc
+net-print/cups -acl -dbus -usb
+net-print/cups-filters -dbus foomatic pdf
+net-proxy/squid logrotate qos sasl
+net-wireless/bluez experimental
+net-wireless/wpa_supplicant ap wps
+sci-libs/fftw quad
+sci-libs/hdf5 mpi
+sci-misc/boinc X
+sys-apps/busybox -make-symlinks math mdev savedconfig -sep-usr -static
+sys-apps/coreutils gmp
+sys-apps/dbus -X
+sys-apps/elfix ptpax
+sys-apps/etckeeper cron
+sys-apps/iproute2 -atm berkdb elf
+sys-apps/kmod tools
+sys-apps/lm-sensors sensord
+sys-apps/man-db berkdb gdbm
+sys-apps/pciutils dns
+sys-apps/portage doc
+sys-apps/shadow skey
+sys-apps/util-linux slang static-libs tty-helpers
+sys-apps/watchdog nfs
+>=sys-auth/pambase-20200304 elogind
+sys-auth/pambase mktemp
+sys-auth/pam_mktemp -prevent-removal
+sys-auth/polkit -gtk elogind
+sys-block/gparted btrfs cryptsetup f2fs fat reiser4 reiserfs xfs
+sys-block/parted device-mapper
+sys-boot/grub device-mapper efiemu mount truetype
+sys-cluster/openmpi heterogeneous mpi-threads romio
+sys-devel/binutils static-libs -gold
+sys-devel/clang llvm_targets_AArch64
+sys-devel/gcc doc objc objc-gc graphite objc++
+>=sys-devel/llvm-10.0.0 llvm_targets_NVPTX llvm_targets_AMDGPU
+sys-devel/llvm libffi -llvm_targets_AMDGPU -llvm_targets_NVPTX llvm_targets_AArch64
+sys-firmware/ipxe lkrn
+sys-fs/cryptsetup -argon2 -gcrypt -luks1_default -nettle openssl reencrypt static static-libs urandom
+sys-fs/dd-rescue cpu_flags_x86_sse4_2
+sys-fs/eudev static-libs
+sys-fs/lvm2 lvm2create_initrd static static-libs
+sys-fs/udisks lvm
+sys-kernel/genkernel-next cryptsetup
+sys-kernel/gentoo-sources -symlink experimental
+sys-kernel/linux-firmware savedconfig
+sys-libs/binutils-libs static-libs
+sys-libs/gdbm berkdb
+sys-libs/libblockdev bcache lvm
+sys-libs/libunwind static-libs
+sys-libs/ncurses ada
+sys-libs/pam berkdb
+sys-libs/readline utils
+sys-libs/slang png
+sys-libs/zlib minizip static-libs
+sys-power/pm-utils alsa ntp
+sys-power/powertop -X
+sys-process/lsof rpc
+sys-process/procps modern-top
+virtual/ffmpeg X mp3 theora -vaapi -vdpau x264
+virtual/imagemagick-tools jpeg svg png tiff
+virtual/libudev static-libs
+>=virtual/mpi-2.0-r4 cxx
+www-client/elinks bittorrent ftp debug javascript perl ruby -ipv6
+www-client/w3m imlib
+x11-base/xorg-server xcsecurity xnest -ipv6
+x11-drivers/xf86-video-intel dri tools uxa xvmc
+x11-libs/cairo X svg
+x11-libs/gdk-pixbuf X jpeg tiff
+x11-libs/gtk+ X
+x11-libs/libdrm libkms video_cards_amdgpu video_cards_nouveau
+x11-libs/libva-intel-driver X
+x11-libs/libva X vdpau
+x11-libs/libxcb xkb
+x11-libs/libxkbcommon X
+x11-libs/pango X
+x11-libs/wxGTK X libnotify sdl tiff opengl webkit
+x11-misc/dzen xft xpm
+x11-misc/xbindkeys tk
+x11-misc/xscreensaver jpeg perl
+x11-terms/mlterm cairo fbcon libssh2 xft
+x11-terms/mrxvt jpeg menubar png truetype xpm
+x11-terms/rxvt-unicode 256-color iso14755 perl startup-notification unicode3 xft
+x11-terms/xterm truetype
+net-misc/ntp -ipv6
+x11-libs/libFS -ipv6
+x11-libs/libICE -ipv6
+x11-libs/libSM -ipv6
+x11-libs/libX11 -ipv6
+x11-libs/libXfont2 -ipv6
+x11-libs/libXmu -ipv6
+sys-process/psmisc -ipv6
+x11-apps/xauth -ipv6
+x11-apps/xhost -ipv6
+dev-lang/ruby -ipv6
+app-editors/vim -X
+sys-kernel/zen-sources symlink

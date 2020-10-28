@@ -1,0 +1,6 @@
+# /etc/exports: NFS file systems being exported.  See exports(5).
+#
+/export			10.255.0.0/28(rw,sync,no_subtree_check,crossmnt,fsid=0,no_root_squash)
+/export/portage		10.255.0.0/28(rw,sync,no_subtree_check,no_root_squash)
+/export/distfiles	10.255.0.0/28(rw,sync,no_subtree_check,no_root_squash)
+/export/packages	10.255.0.0/28(rw,sync,no_subtree_check,no_root_squash)

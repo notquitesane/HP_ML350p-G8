@@ -1,0 +1,4 @@
+dev-python/pafy ~amd64
+dev-python/pyte ~amd64
+dev-python/python-gflags ~amd64
+dev-python/python-linux-procfs ~amd64

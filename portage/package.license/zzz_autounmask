@@ -1,0 +1,38 @@
+>=net-vpn/surfshark-vpn-1.1.0 SurfShark
+app-arch/p7zip 				unRAR
+app-arch/unrar 				unRAR
+app-backup/tarsnap 			tarsnap
+app-benchmarks/bonnie 			bonnie
+app-benchmarks/geekbench 		geekbench
+app-benchmarks/iozone 			freedist
+app-benchmarks/nbench 			freedist
+app-benchmarks/ramspeed 		Alasir
+app-doc/linuxfromscratch 		CC-BY-NC-SA-2.5
+app-emulation/virtualbox-bin 		PUEL
+app-office/moneydance 			TIK
+app-text/agrep 				AGREP
+app-vim/colorschemes 			vim.org
+dev-java/oracle-jdk-bin 		Oracle-BCLA-JavaSE
+games-misc/funny-manpages 		freedist
+games-rpg/pcgen 			OGL-1.0a
+media-gfx/xv 				xv
+media-libs/fdk-aac 			FraunhoferFDK
+net-analyzer/egressor 			egressor
+sys-firmware/intel-microcode 		intel-ucode
+sys-kernel/gentoo-sources 		linux-firmware
+sys-kernel/linux-firmware linux-fw-redistributable no-source-code
+www-client/google-chrome 		google-chrome
+www-client/opera 			OPERA-2014
+www-plugins/adobe-flash 		AdobeFlash-11.x
+>=dev-python/kaptan-0.5.12-r1 kaptan
+=sys-boot/etcher-1.5.73 GPL2
+# required by sys-apps/hp-health (argument)
+>=sys-apps/hp-health-10.91.1878.11 hpe
+# required by sys-apps/hponcfg (argument)
+=sys-apps/hponcfg-5.4.0.0 hpe
+# required by sys-apps/hp-ams (argument)
+>=sys-apps/hp-ams-2.10.0 hpe
+# required by sys-block/hpacucli (argument)
+>=sys-block/hpacucli-9.40.12.0 hp-proliant-essentials
+# required by sys-block/hpssacli (argument)
+=sys-block/hpssacli-2.40.13.0-r1 hpe

@@ -1,0 +1,8 @@
+app-backup/borgweb ~amd64
+app-backup/bup ~amd64
+app-backup/pdumpfs ~amd64
+app-backup/rdumpfs ~amd64
+app-backup/rdup ~amd64
+app-backup/simplebackup ~amd64
+app-backup/tarsnap ~amd64
+app-backup/zbackup ~amd64

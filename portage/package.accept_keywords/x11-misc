@@ -1,0 +1,14 @@
+x11-misc/xcape ~amd64
+x11-misc/xidle ~amd64
+x11-misc/xstroke ~amd64
+# required by app-portage/showem (argument)
+>=app-portage/showem-1.0.3 ~amd64
+# required by =sys-libs/glibc-2.32-r2::gentoo (argument)
+# required by sys-kernel/zen-sources (argument)
+>=sys-kernel/zen-sources-5.8.13 ~amd64
+# required by =sys-kernel/zen-sources-5.8.8 (argument)
+=sys-kernel/zen-sources-5.8.8 ~amd64
+# required by sys-apps/hp-health (argument)
+>=sys-apps/hp-health-10.91.1878.11 ~amd64
+# required by sys-apps/hp-ams (argument)
+>=sys-apps/hp-ams-2.10.0 ~amd64
