@@ -39,3 +39,4 @@ cron:x:16:
 ntp:x:123:
 arpwatch:x:999:
 ngrep:x:998:
+dhcp:x:300:
