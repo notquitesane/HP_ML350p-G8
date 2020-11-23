@@ -1,15 +1,17 @@
-auth		required	pam_env.so 
-auth		required	pam_unix.so try_first_pass likeauth nullok 
+auth		required	pam_env.so
+auth		requisite	pam_faillock.so preauth
+auth		[success=1 default=ignore]	pam_unix.so nullok  try_first_pass
+auth		[default=die]	pam_faillock.so authfail
 auth		optional	pam_permit.so
-account		required	pam_unix.so 
-account		optional	pam_permit.so
-password	required	pam_cracklib.so difok=2 minlen=8 dcredit=2 ocredit=2 retry=3 
-password	required	pam_unix.so try_first_pass use_authtok nullok sha512 shadow 
+-auth		optional	pam_cap.so
+account		required	pam_unix.so
+account         required        pam_faillock.so
+account         optional        pam_permit.so
+password	required	pam_passwdqc.so config=/etc/security/passwdqc.conf
+password	required	pam_unix.so try_first_pass use_authtok nullok sha512 shadow
 password	optional	pam_permit.so
--session        optional        pam_elogind.so
-auth		optional	pam_cap.so
-session		required	pam_limits.so 
-session		required	pam_env.so 
+session		required	pam_limits.so
+session		required	pam_env.so
 session		optional	pam_mktemp.so
-session		required	pam_unix.so 
+session		required	pam_unix.so
 session		optional	pam_permit.so
