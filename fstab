@@ -23,17 +23,17 @@
 #       documentation for details on setting a label. To obtain the UUID, use
 #       the blkid(8) command.
 
-UUID=2be8788c-5a6e-482f-8b64-bbfcbca15f1d	/boot			ext2		noauto,noatime		0 2
-UUID=368635fe-f92c-416a-a1db-d8f1db537a41	/			f2fs		noatime			0 1
-UUID=49f8379f-1aaa-4c3a-aac9-bce61b1865d0	swap			sw		none			0 0
-UUID=781745ef-5d8d-4f65-8ddc-a3d954ed635f	/var			reiserfs	defaults		0 0
-UUID=5d6c736b-04d0-4e4a-b27a-08d768e425ce	/home			ext4		defaults		0 0
-UUID=d03988e8-604a-440e-9476-cdf1ef648385	/media			ext4		defaults		0 0
-UUID=3032181b-081e-4d21-8c1d-4632ae143f81	/usr			f2fs		defaults		0 0
-UUID=43b8fba7-a6b3-4bbb-afbe-941e08af62db	/opt			f2fs		defaults		0 0
-UUID=3ef91b8d-f9ea-4e4c-b228-4394244ce2d8	/var/db/repos/gentoo	reiserfs	defaults		0 0
-UUID=b845db33-adc5-491e-9da4-8b0720e7b88b	/var/cache/distfiles	ext4		defaults		0 0
-UUID=bf309157-c700-44a8-8bcb-0a0cd31c5006	/var/cache/binpkgs	ext4		defaults		0 0
+UUID=2be8788c-5a6e-482f-8b64-bbfcbca15f1d	/boot							ext2		noauto,noatime		0 2
+UUID=368635fe-f92c-416a-a1db-d8f1db537a41	/								f2fs		noatime			0 1
+UUID=49f8379f-1aaa-4c3a-aac9-bce61b1865d0	swap							sw		none			0 0
+UUID=781745ef-5d8d-4f65-8ddc-a3d954ed635f	/var							reiserfs	defaults		0 0
+UUID=5d6c736b-04d0-4e4a-b27a-08d768e425ce	/home							ext4		defaults		0 0
+UUID=d03988e8-604a-440e-9476-cdf1ef648385	/media							ext4		defaults		0 0
+UUID=3032181b-081e-4d21-8c1d-4632ae143f81	/usr							f2fs		defaults		0 0
+UUID=43b8fba7-a6b3-4bbb-afbe-941e08af62db	/opt							f2fs		defaults		0 0
+UUID=3ef91b8d-f9ea-4e4c-b228-4394244ce2d8	/var/git						reiserfs	defaults		0 0
+UUID=b845db33-adc5-491e-9da4-8b0720e7b88b	/var/cache/portage/distfiles	ext4		defaults		0 0
+UUID=bf309157-c700-44a8-8bcb-0a0cd31c5006	/var/cache/portage/binpkgs		ext4		defaults		0 0
 
 /dev/shm                                        /var/tmp                tmpfs           size=10G,mode=1775	0 0
 tmp	                                        /dev/shm                tmpfs           nodev,nosuid,noexec	0 0
@@ -41,7 +41,7 @@ tmp	                                        /dev/shm                tmpfs       
 #nfs exports
 
 /media    					/export/media    	none    	bind			0 0
-/var/db/repos/gentoo                            /export/gentoo          none            bind                    0 0
-/var/cache/distfiles                            /export/distfiles       none            bind                    0 0
-/var/cache/binpkgs                              /export/binpkgs         none            bind                    0 0
-
+/var/git                            /export/gentoo          none            bind                    0 0
+/var/cache/portage/distfiles                            /export/distfiles       none            bind                    0 0
+/var/cache/portage/packages                    /export/binpkgs         none            bind                    0 0
+/home						/export/home	none	bind	0 0

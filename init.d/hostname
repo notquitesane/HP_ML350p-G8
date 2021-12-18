@@ -1,38 +1,43 @@
 #!/sbin/openrc-run
-# Copyright (c) 2007-2015 The OpenRC Authors.
-# See the Authors file at the top-level directory of this distribution and
-# https://github.com/OpenRC/openrc/blob/master/AUTHORS
-#
-# This file is part of OpenRC. It is subject to the license terms in
-# the LICENSE file found in the top-level directory of this
-# distribution and at https://github.com/OpenRC/openrc/blob/master/LICENSE
-# This file may not be copied, modified, propagated, or distributed
-# except according to the terms contained in the LICENSE file.
+# Copyright (c) 2009-2015 Funtoo Technologies
+# Released under the 2-clause BSD license.
 
 description="Sets the hostname of the machine."
 
-depend()
-{
-	after clock
-	keyword -docker -lxc -prefix -systemd-nspawn
+depend() {
+	need root
 }
 
 start()
 {
-	local h source x
-	if [ -s /etc/hostname ] && [ -r /etc/hostname ]; then
-		read h x </etc/hostname
-		source="from /etc/hostname"
-	else
-		# HOSTNAME variable used to be defined in caps in conf.d/hostname.
-		# It is also a magic variable in bash.
-		h=${hostname:-${HOSTNAME}} # checkbashisms: false positive (HOSTNAME var)
+	hostname=${hostname-${HOSTNAME-localhost}}
+	out=$hostname
+	short=${hostname%%.*}
+	if [ "$short" != "$hostname" ]; then
+		out="$out $short"
 	fi
-	if [ -z "$h" ]; then
-		einfo "Using default system hostname"
-		return 0
+	if [ "$nisdomainname" != "" ]; then
+		ebegin "Setting NIS domain name to $nisdomainname"
+		nisdomainname $nisdomainname
+		eend $? "Failed to set the NIS domain name"
 	fi
-	ebegin "Setting hostname to $h $source"
-	hostname "$h"
+	if [ "$short" != "localhost" ]; then
+		out="$out localhost"
+	fi
+	if [ "$hostname" != "localhost.localdomain" ]; then
+		out="$out localhost.localdomain"
+	fi
+	[ -n "$aliases" ] && out="$out $aliases"
+	ebegin "Configuring /etc/hosts"
+	[ -e /etc/hosts ] && sed -i -e '/[[:space:]]*127.0.0.1[[:space:]]/d' -e '/[[:space:]]*::1[[:space:]]/d' /etc/hosts
+	cat <<END >> /etc/hosts
+127.0.0.1	$out
+::1		$out
+END
+	chmod 0644 /etc/hosts
+	eend $?
+	[ "$RC_SYS" = "LXC" ] && return 0
+	ebegin "Setting hostname to $hostname"
+	hostname "$short"
 	eend $? "Failed to set the hostname"
 }

@@ -1,13 +1,6 @@
 #!/sbin/openrc-run
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-
-command=/sbin/dmeventd
-command_args_foreground='-f'
-extra_started_commands=reload
-pidfile=/run/dmeventd.pid
-# Control idle exit behavior of daemon
-export DMEVENTD_IDLE_EXIT_TIMEOUT=${DMEVENTD_IDLE_EXIT_TIMEOUT:=-1}
 
 depend() {
 	# As of .67-r1, we call ALL lvm start/stop scripts with --sysinit, that
@@ -15,7 +8,15 @@ depend() {
 	after lvm device-mapper
 }
 
-reload() {
-	# TODO: this is not supported under supervisors
-	${command} -R
+start() {
+	ebegin "Starting dmeventd"
+	start-stop-daemon --start --exec /sbin/dmeventd --pidfile /var/run/dmeventd.pid
+	eend $?
 }
+
+stop() {
+	ebegin "Stopping dmeventd"
+	start-stop-daemon --stop --exec /sbin/dmeventd --pidfile /var/run/dmeventd.pid
+	eend $?
+}
+

@@ -12,15 +12,16 @@ if [ -n "$1" ]; then
 	if [ "x$1" = "x--stdin" ]; then
 		cat > "$logfile"
 	else
-		sed '1s/^-m \{0,1\}//' >"$logfile" <<-EOF
-			$*
-		EOF
+		if [ "x$1" = "x-m" ]; then
+			shift 1
+		fi
+		echo "$1" > "$logfile"
 	fi
 else
 	logfile=""
 fi
 
-hostname=`hostname 2>/dev/null || cat /etc/hostname`
+hostname=`hostname`
 hostname="${hostname%%.*}"
 dnsdomainname=`dnsdomainname 2>/dev/null || true`
 if [ -n "$dnsdomainname" ]; then

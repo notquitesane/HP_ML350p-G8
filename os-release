@@ -1,7 +1,6 @@
-NAME=Gentoo
-ID=gentoo
-PRETTY_NAME="Gentoo/Linux"
-ANSI_COLOR="1;32"
-HOME_URL="https://www.gentoo.org/"
-SUPPORT_URL="https://www.gentoo.org/support/"
-BUG_REPORT_URL="https://bugs.gentoo.org/"
+ID="funtoo"
+NAME="Funtoo"
+PRETTY_NAME="Funtoo Linux"
+ANSI_COLOR="0;34"
+HOME_URL="https://www.funtoo.org"
+BUG_REPORT_URL="https://bugs.funtoo.org"

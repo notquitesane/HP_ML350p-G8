@@ -13,64 +13,63 @@ description="Delays until the network is online or a specific timeout"
 
 depend()
 {
-	after modules net
+	before *
 	need sysfs
 	provide network-online
-	keyword -docker -jail -lxc -openvz -prefix -systemd-nspawn -uml -vserver
+	keyword -jail -prefix -systemd-nspawn
 }
 
 get_interfaces()
 {
 	local ifname iftype
 	for ifname in /sys/class/net/*; do
-		[ -h "${ifname}" ] && continue
 		read iftype < ${ifname}/type
 		[ "$iftype" = "1" ] && printf "%s " ${ifname##*/}
 	done
 }
 
+attempt_with_min_delay() {
+
+	# This function attempts something repeatedly, but if it takes less than one second then
+	# it detects this and inserts an artificial 0.5 second "setup delay" so it doesn't blow
+	# through all attempts too quickly. Good for when the connectivity test is failing
+	# immediately due to DNS resolution error, etc, so makes the connectivity test much easier
+	# to write. This connectivity test actually turns out to be a tricky little problem!
+	# This should solve it.
+
+	local count=0
+	local max_attempts=$1
+	local cmd="$2"
+	ebegin "Performing connectivity test (attempts=$max_attempts)"
+	while [ $count -lt $max_attempts ]; do
+		count=$[ $count + 1 ]
+		local ts_start=$(date +%s%N)
+		eval $cmd
+		if [ $? -eq 0 ]; then
+			return 0
+		fi
+		local ts_stop=$(date +%s%N)
+		local ts_diff=$[ $ts_stop - $ts_start ]
+		if [ $count -lt $max_attempts ] && [ $ts_diff -lt 1000000000 ]; then
+			# command took less than 1 sec to run; so wait at least 0.5 seconds between attempts
+			sleep 0.5
+		fi
+	done
+	return 1
+}
+
 start ()
 {
-	local carriers configured dev gateway ifcount infinite
-	local carrier operstate rc
-
-	ebegin "Checking to see if the network is online"
-	rc=0
-	interfaces=${interfaces:-$(get_interfaces)}
-	timeout=${timeout:-120}
- [ $timeout -eq 0 ] && infinite=true || infinite=false
- while $infinite || [ $timeout -gt 0 ]; do
-	carriers=0
-	configured=0
-	ifcount=0
- 	for dev in ${interfaces}; do
-		: $((ifcount += 1))
-		read carrier < /sys/class/net/$dev/carrier 2> /dev/null ||
-			carrier=
-		[ "$carrier" = 1 ] && : $((carriers += 1))
-		read operstate < /sys/class/net/$dev/operstate 2> /dev/null ||
-			operstate=
-		[ "$operstate" = up ] && : $((configured += 1))
-	done
-	[ $configured -eq $ifcount ] && [ $carriers -ge 1 ] && break
-	sleep 1
-	: $((timeout -= 1))
- done
- ! $infinite && [ $timeout -eq 0 ] && rc=1
- include_ping_test=${include_ping_test:-${ping_default_gateway}}
- if [ -n "${ping_default_gateway}" ]; then
- ewarn "ping_default_gateway is deprecated, please use include_ping_test"
- fi
- if [ $rc -eq 0 ] && yesno ${include_ping_test:-no}; then
- 	ping_test_host="${ping_test_host:-google.com}"
- 	if [ -n "$ping_test_host" ]; then
-		while $infinite || [ $timeout -gt 0 ]; do
-			ping -c 1 $ping_test_host > /dev/null 2>&1
-			rc=$?
-			[ $rc -eq 0 ] && break
-			: $((timeout -= 1))
-		done
+	if [ -n "$connectivity_test" ]; then
+		attempt_with_min_delay "${connectivity_attempts:-10}" "$connectivity_test"
+		success=$?
+		if [ $success -eq 0 ]; then
+			eend 0 "The network is now connected"
+		else
+			# There is not a huge benefit in failing here. Doing so could prevent normal, timely startup.
+			# Better to just continue.
+			eend 1 "The network failed to connect. Continuing anyway."
+		fi
 	fi
- fi
- eend $rc "The network is offline"
+	return 0
 }

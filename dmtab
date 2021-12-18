@@ -1,4 +1,5 @@
 #/etc/dmraid: config file for adding device-mapper volumes at boot
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/lvm2/files/dmtab,v 1.1 2009/04/09 23:00:10 caleb Exp $
 
 # Format: <volume name>: <table>
 # Example: isw0: 0 312602976 striped 2 128 /dev/sda 0 /dev/sdb 0
@@ -9,3 +10,15 @@
 #
 # and verify that they are correct.
 
+fast: 0 933496496 crypt aes-xts-plain64:sha256 0000000000000000000000000000000000000000000000000000000000000000 0 259:3 4096
+fast-opt: 0 52428800 linear 254:0 230688768
+fast-portage: 0 104857600 linear 254:0 283117568
+fast-root: 0 20971520 linear 254:0 2048
+fast-usr: 0 209715200 linear 254:0 20973568
+slow: 0 17581395456 crypt aes-xts-plain64:sha256 0000000000000000000000000000000000000000000000000000000000000000 0 8:1 3072
+slow-distfiles: 0 20971520 linear 254:1 15621686784
+slow-home: 0 1073741824 linear 254:1 1663043072
+slow-media: 0 12884901888 linear 254:1 2736784896
+slow-packages: 0 20971520 linear 254:1 15642658304
+slow-swap: 0 1610612736 linear 254:1 52430336
+slow-var: 0 52428800 linear 254:1 1536

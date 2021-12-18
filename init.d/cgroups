@@ -95,12 +95,21 @@ cgroup2_controllers()
 	return 0
 }
 
+# Funtoo change. Mount systemd's cgroups, even when OpenRC used. required for systemd-based lxd containers
+cgroups_systemd() {
+	if ! mountinfo -q /sys/fs/cgroup/systemd; then
+		mkdir -p /sys/fs/cgroup/systemd
+		mount -t cgroup -o none,name=systemd systemd /sys/fs/cgroup/systemd
+	fi
+}
+
 cgroups_hybrid()
 {
 	cgroup1_base
 	cgroup2_base
 	cgroup2_controllers
 	cgroup1_controllers
+	cgroups_systemd
 	return 0
 }
 

@@ -11,7 +11,9 @@ if [ -e /etc/profile.env ] ; then
 fi
 
 # You should override these in your ~/.bashrc (or equivalent) for per-user
-# settings.  For system defaults, you can add a new file in /etc/profile.d/.
+# settings. For system defaults, you can add a new file in /etc/profile.d/.
+
+export PATH=${PATH:-/usr/sbin:/usr/bin:/sbin:/bin}
 export EDITOR=${EDITOR:-/bin/nano}
 export PAGER=${PAGER:-/usr/bin/less}
 
@@ -25,7 +27,6 @@ for sh in /etc/profile.d/*.sh ; do
 	[ -r "$sh" ] && . "$sh"
 done
 unset sh
-
 if [ -n "${BASH_VERSION-}" ] ; then
 	# Newer bash ebuilds include /etc/bash/bashrc which will setup PS1
 	# including color.  We leave out color here because not all

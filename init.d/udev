@@ -9,17 +9,17 @@ description="udev manages device permissions and symbolic links in /dev"
 extra_started_commands="reload"
 description_reload="Reload the udev rules and databases"
 
-depend() {
+depend()
+{
 	need sysfs dev-mount
 	before checkfs fsck
 	keyword -lxc -systemd-nspawn -vserver
 }
 
 get_udevd_binary() {
-	local bins
-	bins="/sbin/udevd /lib/systemd/systemd-udevd /usr/lib/systemd/systemd-udevd"
+	local bins="/sbin/udevd /lib/systemd/systemd-udevd /usr/lib/systemd/systemd-udevd"
 	for f in ${bins}; do
-		if [ -x "$f" ]; then
+		if [ -x "$f" -a ! -L "$f" ]; then
 			command="$f"
 		fi
 	done
@@ -29,7 +29,8 @@ get_udevd_binary() {
 	fi
 }
 
-start_pre() {
+start_pre()
+{
 	# make sure devtmpfs is in the kernel
 	if ! grep -qs devtmpfs /proc/filesystems; then
 		eerror "CONFIG_DEVTMPFS=y is required in your kernel configuration"
@@ -72,16 +73,24 @@ start_pre() {
 	return 0
 }
 
-stop() {
-	get_udevd_binary || return 1
+stop()
+{
+	local rc=0
 	ebegin "Stopping ${name:-$RC_SVCNAME}"
-	udevadm control --exit ||
-		start-stop-daemon --stop --exec "${command}" --pidfile "${pidfile}" &&
-		rm -f "${pidfile}"
-	eend $? "Failed to stop $RC_SVCNAME"
+	udevadm control --exit
+	rc=$?
+	if [ $rc -ne 0 ]; then
+		eend $rc "Failed to stop $RC_SVCNAME using udevadm"
+		ebegin "Trying with start-stop-daemon"
+		start-stop-daemon --stop --pidfile "${pidfile}"
+		rc=$?
+	fi
+	[ $rc -eq 0 ] && rm -f "${pidfile}"
+	eend $rc "Failed to stop $RC_SVCNAME"
 }
 
-reload() {
+reload()
+{
 	ebegin "reloading udev rules and databases"
 	udevadm control --reload
 	eend $?

@@ -26,7 +26,7 @@ depend()
 	use afc-client amd openvpn
 	use dns
 	use root
-	keyword -docker -jail -lxc -prefix -systemd-nspawn -vserver
+	keyword -jail -prefix -systemd-nspawn
 }
 
 start()
@@ -70,7 +70,7 @@ stop()
 		fs="$fs${fs:+,}$x"
 	done
 	if [ -n "$fs" ]; then
-		umount -at $fs || eerror "Failed to simply unmount filesystems"
+		umount -lat $fs || eerror "Failed to simply unmount filesystems"
 	fi
 
 	eindent

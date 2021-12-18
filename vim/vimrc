@@ -1,8 +1,6 @@
 scriptencoding utf-8
 " ^^ Please leave the above line at the start of the file.
 
-" Default configuration file for Vim
-
 " Written by Aron Griffis <agriffis@gentoo.org>
 " Modified by Ryan Phillips <rphillips@gentoo.org>
 " Modified some more by Ciaran McCreesh <ciaranm@gentoo.org>
@@ -18,9 +16,11 @@ scriptencoding utf-8
 " deviating only where it makes sense
 set nocompatible        " Use Vim defaults (much better!)
 set bs=2                " Allow backspacing over everything in insert mode
-set ai                  " Always set auto-indenting on
+set ai                  " Auto-indenting off to allow pasting to work by default 
 set history=50          " keep 50 lines of command history
 set ruler               " Show the cursor position all the time
+set noexpandtab
+set ts=4 sw=4
 
 set viminfo='20,\"500   " Keep a .viminfo file.
 
@@ -41,10 +41,7 @@ endif
 " }}}
 
 " {{{ Modeline settings
-" We don't allow modelines by default. See bug #14088 and bug #73715.
-" If you're not concerned about these, you can enable them on a per-user
-" basis by adding "set modeline" to your ~/.vimrc file.
-set nomodeline
+set modeline
 " }}}
 
 " {{{ Locale settings
@@ -155,18 +152,11 @@ augroup gentoo
   au BufRead,BufNewFile *.e{build,class} let is_bash=1|setfiletype sh
   au BufRead,BufNewFile *.e{build,class} set ts=4 sw=4 noexpandtab
 
-  " In text files, limit the width of text to 78 characters, but be careful
-  " that we don't override the user's setting.
-  autocmd BufNewFile,BufRead *.txt
-        \ if &tw == 0 && ! exists("g:leave_my_textwidth_alone") |
-        \     setlocal textwidth=78 |
-        \ endif
-
   " When editing a file, always jump to the last cursor position
   autocmd BufReadPost *
         \ if ! exists("g:leave_my_cursor_position_alone") |
         \     if line("'\"") > 0 && line ("'\"") <= line("$") |
-        \         exe "normal! g'\"" |
+        \         exe "normal g'\"" |
         \     endif |
         \ endif
 
@@ -193,22 +183,48 @@ endif " has("autocmd")
 " instead:
 let g:skip_defaults_vim = 1
 
-" Enable Omni completion when opening a file only if a specific plugin does
-" not already exist for that filetype. This allows Omni completion
-" (Ctrl-x/Ctrl-o) to work with any programming language if and only if a syntax
-" file exists for the said language.
-if exists("+omnifunc")
-   autocmd Filetype *
-	      \	if &omnifunc == "" |
-	      \		setlocal omnifunc=syntaxcomplete#Complete |
-	      \	endif
-endif
-
 " {{{ vimrc.local
 if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
 endif
 " }}}
 
-" vim: set fenc=utf-8 tw=80 sw=2 sts=2 et foldmethod=marker :
+autocmd Syntax * syn match ExtraWhitespace /\S\s\+$/
+set listchars=tab:>-,trail:~,extends:>,precedes:<
+set list
+function! PasteFriendly()
+    if &list
+        setlocal nolist noai
+        echom "Whitespace visibility and auto-indent disabled for easier copy/paste."
+    else
+        setlocal list ai
+        echom "Whitespace visibility and auto-indent enabled for easier editing."
+    endif
+endfunction
+
+function! Foo()
+  if ! &list && ! &ai
+      return "on "
+    else
+      return "off"
+    fi
+endfunction
+nnoremap <F3> :call PasteFriendly()<CR>
+inoremap <F3> <C-o>:call PasteFriendly()<CR>
+cnoremap <F3> <C-c>:call PasteFriendly()<CR>
+
+set laststatus=2
+set statusline=   " clear the statusline for when vimrc is reloaded
+set statusline+=%-3.3n\                      " buffer number
+set statusline+=%f\                          " file name
+set statusline+=%h%m%r%w                     " flags
+set statusline+=[%{strlen(&ft)?&ft:'none'},  " filetype
+set statusline+=%{strlen(&fenc)?&fenc:&enc}, " encoding
+set statusline+=%{&fileformat}]              " file format
+set statusline+=%=\ [F3]:\ PasteMode\ %{Foo()}\ \ \                            " right align
+set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
+hi Comment ctermfg=cyan
+hi SpecialKey ctermfg=darkblue
+hi StatusLine term=reverse ctermbg=white ctermfg=darkblue gui=undercurl guisp=Magenta
+" vim: set fenc=utf-8 tw=80 sw=2 sts=2 et :
 
