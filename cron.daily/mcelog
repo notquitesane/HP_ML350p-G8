@@ -1,0 +1,3 @@
+#!/bin/bash
+header="$(date +"%b %d %H:%M:%S") $(hostname) "
+/usr/sbin/mcelog --ignorenodev --filter | sed "s,^,$header,g" >> /var/log/mcelog
