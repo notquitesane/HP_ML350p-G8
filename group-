@@ -21,6 +21,7 @@ messagebus:x:247:
 news::13:news
 nobody::65534:
 nogroup::65533:
+ntp:x:123:
 nullmail:x:88:
 openvpn:x:248:
 portage::250:portage

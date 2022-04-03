@@ -67031,3 +67031,6 @@ ff02::3 ip6-allhosts
 0.0.0.0 bestsiteporn.com
 0.0.0.0 safefreepornsites.com
 0.0.0.0 xxxmom.net
+
+127.0.0.1	mavis localhost localhost.localdomain
+::1		mavis localhost localhost.localdomain
