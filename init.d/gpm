@@ -1,5 +1,4 @@
 #!/sbin/openrc-run
-# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 #NB: Config is in /etc/conf.d/gpm
@@ -13,7 +12,7 @@ command_args="
 	${APPEND}
 "
 
-pidfile=/var/run/gpm.pid
+pidfile=/run/gpm.pid
 
 depend() {
 	need localmount

@@ -14,7 +14,7 @@ app-crypt/p11-kit libffi
 app-emulation/docker aufs
 app-emulation/qemu curl jpeg nfs png qemu_softmmu_targets_aarch64 qemu_user_targets_aarch64 qemu_user_targets_x86_64 ssh tci usb usbredir vde vte xfs
 app-emulation/virtualbox-modules -pax_kernel
-app-misc/mc X -slang
+app-misc/mc -X -slang
 app-office/gnucash ofx
 app-office/libreoffice-bin java
 app-office/libreoffice java googledrive pdfimport
@@ -185,7 +185,7 @@ sys-auth/pam_mktemp -prevent-removal
 sys-auth/polkit -gtk elogind
 sys-block/gparted btrfs cryptsetup f2fs fat reiser4 reiserfs xfs
 sys-block/parted device-mapper
-sys-boot/grub device-mapper efiemu mount truetype
+sys-boot/grub device-mapper -efiemu mount truetype -themes -grub_platforms_efi-64
 sys-cluster/openmpi heterogeneous mpi-threads romio
 sys-devel/binutils static-libs -gold
 sys-devel/clang llvm_targets_AArch64
@@ -257,3 +257,22 @@ sys-libs/glibc caps
 # required by sys-apps/openrc-0.41.2-r4::core-kit
 # required by sys-apps/corenetwork-1.6.5::core-kit
 >=sys-libs/pam-1.3.1.20190226 mktemp
+net-fs/nfs-utils nfsv41
+app-editors/nano minimal -magic
+# required by app-admin/keepass-2.42.1::desktop-kit
+# required by app-admin/keepass (argument)
+>=dev-dotnet/libgdiplus-6.0.5 cairo
+# required by dev-dotnet/libgdiplus-6.0.5::lang-kit
+# required by dev-lang/mono-6.12.0.122::lang-kit
+# required by app-admin/keepass-2.42.1::desktop-kit
+# required by app-admin/keepass (argument)
+>=x11-libs/cairo-1.16.0-r3 X
+# required by app-portage/smart-live-rebuild-1.3.6::nokit
+# required by app-portage/smart-live-rebuild (argument)
+>=app-portage/gentoopm-0.3.0 -python_targets_python2_7
+# required by app-portage/smart-live-rebuild-1.3.6::nokit
+# required by app-portage/smart-live-rebuild (argument)
+>=app-portage/gentoopm-0.3.0 python_targets_python2_7
+app-shells/zsh doc maildir
+sys-boot/grub mount -grub_platforms_efi-64
+sys-apps/lm_sensors sensord
