@@ -10,17 +10,10 @@
 #
 # ===============================================================
 
-127.0.0.1 localhost
-127.0.0.1 localhost.asisee.it	babs
-127.0.0.1 local
 255.255.255.255 broadcasthost
-::1 localhost
-::1 ip6-localhost
-::1 ip6-loopback
 fe80::1%lo0 localhost
 ff00::0 ip6-localnet
 ff00::0 ip6-mcastprefix
-ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters
 ff02::3 ip6-allhosts
 0.0.0.0 0.0.0.0
@@ -2233,7 +2226,6 @@ ff02::3 ip6-allhosts
 # blocks most advertising you would otherwise be subjected to on the 
 # internet. 
 
-# There is a version of this file that uses 127.0.0.1 instead of 0.0.0.0 
 # available at http://someonewhocares.org/hosts/.
 # On some machines this may run minutely faster, however the zero version
 # may not be compatible with all systems. 
@@ -16333,7 +16325,6 @@ ff02::3 ip6-allhosts
 # Notes: The Operating System does not read the "#" symbol #
 # or anything after the # symbol on the same line          #
 #                                                          #
-# This *must* be the first line: 127.0.0.1     localhost   #
 #                                                          #
 #**********************************************************#
 # --------------- Updated: October-1-2018 ---------------- #
@@ -65344,7 +65335,6 @@ ff02::3 ip6-allhosts
 # [applift]
 0.0.0.0 applift.com
 # use finer grained hostnames?
-#127.0.0.1 tracking.applift.com
 
 # [EFF Tracker Detection]
 0.0.0.0 trackersimulator.org

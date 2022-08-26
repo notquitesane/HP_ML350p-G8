@@ -1,15 +1,11 @@
 #!/sbin/openrc-run
-# Copyright (c) 2007-2018 Funtoo Solutions, Inc.
+# Copyright (c) 2007-2022 Funtoo Solutions, Inc.
 # All rights reserved. Released under the 2-clause BSD license.
 
 # TODO - generate cached config for /etc/init.d/foo, use them for starting and stopping
 # rather than running "live" commands. This way "stop" will work correctly at all times.
 
-interface=${RC_SVCNAME#net.}
-if [ "$interface" == "${RC_SVCNAME}" ]; then
-	# if it doesn't begin with net., then look for netif.
-	interface=${RC_SVCNAME#netif.}
-fi
+interface=${RC_SVCNAME#netif.}
 
 [ "$interface" = "tmpl" ] && exit 0
 
@@ -26,6 +22,14 @@ DESC2="${template}"
 
 STARTD="Network $DESC2 $CYAN$interface$OFF up"
 STOPD="Network $DESC2 $CYAN$interface$OFF down"
+if [ "$dhcp" = "yes" ]; then
+	DHCPC=${DHCPC:-"/sbin/dhcpcd"}
+	DHCPC_PIDFILE="/var/run/dhcpcd-${interface}.pid"
+	if [ ! -f "${DHCPC}" ]; then
+		echo "dhcpcd binary not found. Did you emerge net-misc/dhcpcd?"
+		exit 1
+	fi
+fi
 
 require() {
 	local missing=""
@@ -83,21 +87,22 @@ depend() {
 	if [ -n "$gateway" ] || [ -n "$gateway6" ]; then
 		provide net
 	fi
-	[ -n "$slaves" ] && need $slaves
+	[ -n "$slaves" ] && need $(filter_interface_names $slaves)
+	[ -n "$bridge" ] && need $bridge
 	netif_depend
 }
 
 start() {
 	ebegin "$STARTD"
 	netif_create
-	if [ "$macaddr" != "" ]; then
+	if [ "$macaddr" != "" -a "$vlanmode" != "sriov" ]; then
 		/sbin/nameif ${interface} ${macaddr} || die "Couldn't rename interface"
 	fi
 	if [ ! -d /proc/sys/net/ipv6 ]; then
 		# attempt to silently load ipv6 module
 		modprobe -q ipv6
 	fi
-	if [ "$vlanmode" != "off" -a "$vlanmode" != "script" ]; then #configure vlan only if not managed by netif_* script
+	if [ "$vlanmode" != "off" -a "$vlanmode" != "script" -a "$vlanmode" != "sriov" ]; then #configure vlan only if not managed by netif_* script or sriov
 		if [ ! -d /proc/net/vlan ]; then
 			modprobe -q 8021q
 			if [ ! -d /proc/net/vlan ]; then
@@ -108,21 +113,48 @@ start() {
 		require trunk vlan
 		trunk_int="$(get_trunk_int ${trunk})"
 		ip link add name ${interface} link ${trunk_int} type vlan id ${vlan} || die "Couldn't configure VLAN ${vlan} on ${trunk}"
+	elif [ "$vlanmode" = "sriov" ]; then
+		trunk_int="$(get_trunk_int ${trunk})"
+		if [ -n "$vlan" ]; then
+			ip link set ${trunk_int} vf ${virtfn} vlan ${vlan} qos ${priority-0}
+		fi
+		if [ -z "$mac_replace" ]; then
+			mac_replace="$macaddr"
+		fi
+		if [ -z "$mac_replace" ]; then
+			trunk_mac="$(ip link show dev ${trunk_int} | awk '/link\/ether/{print $2}' || echo '00:00:00:00:00:00' )"
+			mac_replace="$(get_virtfn_mac ${virtfn} ${trunk_mac})"
+		fi
+		ip link set ${trunk_int} vf ${virtfn} mac ${mac_replace}
+		ip link set ${trunk_int} vf ${virtfn} spoofchk ${spoofchk-on}
+		virtfn_dev="$(get_virtfn_dev ${trunk_int} ${virtfn})"
+		if [ -z "$virtfn_dev" ]; then
+			eend 0; return
+		fi
+		if [ "$virtfn_dev" != "$interface" ]; then
+			/sbin/nameif ${interface} ${mac_replace}
+		fi
 	fi
 	ip addr flush dev $interface scope global > /dev/null 2>&1
+	set_sriov_numvfs "$numvfs"
 	netif_pre_up
-	if [ -n "$mac_replace" ]; then
+	if [ -n "$mac_replace" -a "$vlanmode" != "sriov" ]; then
 		ip link set dev $interface address $mac_replace || die "Couldn't set MAC to $mac_replace."
 	fi
 	debug ip link set $interface up
 	if [ -n "$mtu" ]; then
 		ip link set $interface mtu $mtu
 		if [ -n "$slaves" ]; then
-			for slave in ${slaves//net./}; do
+			for slave in ${slaves//netif./}; do
 				ip link set $slave mtu $mtu || eend $?
 			done
 		fi
 	fi
+	if [ -n "$bridge" ]; then
+		ip link set dev $interface mtu $(ip link show dev $(get_interface_names $bridge) | sed -re 's/^.*mtu ([0-9]+).*$/\1/; q')
+		brctl addif $(get_interface_names $bridge) $interface || die "brctl addif error"
+	fi
+	ezdhcp start
 	ezroute 4 add; ezroute 6 add; ezresolv add
 	ezrule 4 add; ezrule 6 add
 	if [ "$multicast" = "yes" ]
@@ -132,19 +164,34 @@ start() {
 		eend $?
 	fi
 	netif_post_up
+	if [ -n "$virtfn" ]; then
+		trunk_int="$(get_trunk_int ${trunk})"
+		if ! get_virtfn_dev >/dev/null ; then
+			ip link set ${trunk_int} vf ${virtfn} vlan 0
+			ip link set ${trunk_int} vf ${virtfn} spoofchk on
+			eend 0; return
+		fi
+	fi
 	eend $?
 }
 
 stop() {
 	ebegin "$STOPD"
+	set_sriov_numvfs 0
 	netif_pre_down
 	ezrule 6 del; ezrule 4 del
 	ezresolv del; ezroute 6 del; ezroute 4 del
+	ezdhcp stop
 	ip link set $interface down
 	ip addr flush dev $interface scope global
 	netif_post_down
 	# VLANS:
-	[ "${vlanmode}" != "off" -a "$vlanmode" != "script" ] && ip link delete ${interface}
+	[ "${vlanmode}" != "off" -a "$vlanmode" != "script" -a "$vlanmode" != "sriov" ] && ip link delete ${interface}
+	if [ "$vlanmode" == "sriov" ]; then
+		ip link set ${trunk_int} vf ${virtfn} vlan 0
+		ip link set ${trunk_int} vf ${virtfn} spoofchk on
+		ip link set ${trunk_int} vf ${virtfn} mac "00:00:00:00:00:00"
+	fi
 	netif_destroy
 	eend 0
 }
@@ -210,9 +257,18 @@ get_option() {
 
 get_interface_names() {
 	for ifn in $*; do
-		echo ${ifn#*.}
+		echo ${ifn#netif.}
 	done
 }
+
+# This removes any non-netif interface names from a list:
+
+filter_interface_names() {
+	for ifn in $*; do
+		[ "${ifn#netif.}" != "${ifn}" ] && echo "$ifn"
+	done
+}
+
 
 # We are migrating from having trunk=eth0 to trunk=net.eth0. This following function is used to implement backwards
 # compatibility. If we see $trunk existing in /etc/init.d, then we assume it has a net. or netif. prefix we need to
@@ -227,6 +283,56 @@ get_trunk_int() {
 	fi
 }
 
+# derive a default fixed mac address for sr-iov virtual functions by setting the
+# first octet to indicate a locally administered mac, the second two octets to encode
+# the virtual function number in hex (allowing up to 16K VF's) and repeating the 
+# physical function's last three octets so that the physical device is recognizable
+
+# arg1: virtfn number
+# arg2: physfn mac address
+get_virtfn_mac() {
+	local tmp2="$(( ( $1 & 0xFF00 ) >> 8 ))"
+	local tmp3="$(( $1 & 0xFF ))"
+	local oct1="02"
+	local oct2="$(printf "%02x" $tmp2)"
+	local oct3="$(printf "%02x" $tmp3)"
+	local oct4="$(echo $2 | cut -f4 -d:)"
+	local oct5="$(echo $2 | cut -f5 -d:)"
+	local oct6="$(echo $2 | cut -f6 -d:)"
+	echo "$oct1:$oct2:$oct3:$oct4:$oct5:$oct6"
+}
+
+# find out the logical device name of the given virtual function
+# arg1: trunk_int
+# arg2: virtfn number
+get_virtfn_dev() {
+	if [ -d "/sys/class/net" ]; then
+		local virtnetpath="/sys/class/net/$1/device/virtfn$2/net"
+		if [ ! -d "$virtnetpath" ]; then
+			return 1
+		fi
+		ls /sys/class/net/$1/device/virtfn$2/net | head -n 1
+	else
+		echo "Funtoo cannot handle SR-IOV networking on non-Linux kernels." >&2
+		echo "If this message surprises you, check that /sys/ is mounted." >&2
+		exit 1
+	fi
+}
+
+# set the number of active virtual functions
+# arg1: integer
+set_sriov_numvfs() {
+	local wanted="$1"
+	[ -z "$wanted" -o -z "$maxvfs" ] && return 0
+	local target="/sys/class/net/${interface}/device/sriov_numvfs"
+	local current="$(cat "$target" 2>/dev/null)"
+	[ -z "$current" -o "$wanted" == "$current" ] && return 0
+	echo 0 > "$target"
+	[ "$wanted" -eq 0 ] && return 0
+	echo "$wanted" > "$target"
+	return $?
+}
+
 start_pre() {
 	if [ -n "$ipaddr $ipaddrs" ]; then
 		for i in $ipaddr $ipaddrs; do
@@ -237,6 +343,23 @@ start_pre() {
 				echo
 			fi
 		done
+	fi
+}
+
+ezdhcp() {
+	if [ "$dhcp" != "yes" ]; then
+		return
+	fi
+	if [ "$1" = "start" ]; then
+		if [ -f "${DHCPC_PIDFILE}" ]; then
+			die "There's a PID file for interface $interface. Aborting."
+		fi
+		$DHCPC -b -t0 $interface
+	else
+		if [ ! -f "${DHCPC_PIDFILE}" ]; then
+			die "There's no PID file for interface ${interface}. Aborting."
+		fi
+		start-stop-daemon --stop --exec "${DHCPC}" --pidfile "${DHCPC_PIDFILE}"
 	fi
 }
 
@@ -309,16 +432,36 @@ ezrule() {
 	fi
 }
 
-if [ -z "$trunk" -a -z "$vlanmode" ]; then
+if [ -z "$virtfn" -a -z "$trunk" -a -z "$vlanmode" ]; then
 	# auto-detect trunk/vlan ID from interface name
 	vlanmode="auto"
 	vlan="${interface##*.}"
 	trunk="${interface%.*}"
 	[ "$vlan" = "$interface" ] && vlanmode="off"
+elif [ -n "$virtfn" ]; then
+	# trunk/vlan ID configures sr-iov virtual function
+	vlanmode="sriov"
+	require trunk
 else
 	# trunk/vlan ID specified by user in config
 	: ${vlanmode:="custom"} #don't overwrite vlanmode if already specified
 	require vlan
+fi
+
+# skip this check when /sys isn't mounted yet
+if [ -n "$numvfs" -a -d "/sys/class/net" ]; then
+	if [ "$vlanmode" != "off" ]; then
+		echo "ERROR: cannot set up SR-IOV from a VLAN interface." >&2
+		exit 1
+	fi
+	maxvfs="$(cat /sys/class/net/${interface}/device/sriov_totalvfs 2>/dev/null)"
+	if [ -z "$maxvfs" -a -n "$numvfs" ]; then
+		echo "ERROR: ${interface} does not support virtual functions."
+		exit 1
+	fi
+	if [ "$numvfs" -lt 1 -o "$numvfs" -gt "$maxvfs" ]; then
+		numvfs="$maxvfs"
+	fi
 fi
 
 . /etc/netif.d/$template

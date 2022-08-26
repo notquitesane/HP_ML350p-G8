@@ -1,12 +1,11 @@
 #!/sbin/openrc-run
-# Copyright 1999-2012 Gentoo Foundation
 # Released under the 2-clause BSD license.
 
 description="Set up tmpfiles.d entries for /dev"
 
 depend()
 {
-	provide tmpfiles-dev tmpfiles.dev
+	provide stmpfiles-dev stmpfiles.dev tmpfiles-dev tmpfiles.dev
 	use dev-mount
 	before dev
 	keyword -prefix -vserver
@@ -15,6 +14,6 @@ depend()
 start()
 {
 	ebegin "Setting up tmpfiles.d entries for /dev"
-	tmpfiles --prefix=/dev --create --boot ${tmpfiles_opts}
+	/bin/systemd-tmpfiles --prefix=/dev --create --boot ${stmpfiles_opts}
 	eend $?
 }

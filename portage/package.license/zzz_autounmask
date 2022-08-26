@@ -36,3 +36,5 @@ www-plugins/adobe-flash 		AdobeFlash-11.x
 >=sys-block/hpacucli-9.40.12.0 hp-proliant-essentials
 # required by sys-block/hpssacli (argument)
 =sys-block/hpssacli-2.40.13.0-r1 hpe
+# required by rar (argument)
+>=app-arch/rar-5.7.1_p20190427 RAR

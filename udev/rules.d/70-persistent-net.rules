@@ -1,0 +1,12 @@
+
+# PCI device 0x14e4:0x1657 (tg3)
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="9c:8e:99:57:45:de", ATTR{dev_id}=="0x0", ATTR{type}=="1", KERNEL=="eth*", NAME="eth2"
+
+# PCI device 0x14e4:0x1657 (tg3)
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="9c:8e:99:57:45:dc", ATTR{dev_id}=="0x0", ATTR{type}=="1", KERNEL=="eth*", NAME="eth0"
+
+# PCI device 0x14e4:0x1657 (tg3)
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="9c:8e:99:57:45:df", ATTR{dev_id}=="0x0", ATTR{type}=="1", KERNEL=="eth*", NAME="eth3"
+
+# PCI device 0x14e4:0x1657 (tg3)
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="9c:8e:99:57:45:dd", ATTR{dev_id}=="0x0", ATTR{type}=="1", KERNEL=="eth*", NAME="eth1"

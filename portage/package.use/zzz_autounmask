@@ -9,7 +9,7 @@ app-arch/xz-utils static-libs
 app-backup/dar dar64 gcrypt lzo
 app-crypt/argon2 static-libs
 app-crypt/gnupg doc smartcard tools usb wks-server
-app-crypt/gpgme -qt5
+app-crypt/gpgme -qt5 python_targets_python3_8
 app-crypt/p11-kit libffi
 app-emulation/docker aufs
 app-emulation/qemu curl jpeg nfs png qemu_softmmu_targets_aarch64 qemu_user_targets_aarch64 qemu_user_targets_x86_64 ssh tci usb usbredir vde vte xfs
@@ -19,10 +19,10 @@ app-office/gnucash ofx
 app-office/libreoffice-bin java
 app-office/libreoffice java googledrive pdfimport
 app-portage/eix doc sqlite nls
-app-portage/layman mercurial sqlite squashfs sync-plugin-portage gpg
+app-portage/layman mercurial sqlite squashfs sync-plugin-portage gpg python_targets_python3_8
 app-shells/bash net
 app-shells/zsh doc examples gdbm maildir
-app-text/asciidoc graphviz highlight
+app-text/asciidoc graphviz highlight python_targets_python3_8
 app-text/calibre -udisks
 app-text/ghostscript-gpl cups
 app-text/mupdf X
@@ -56,7 +56,7 @@ dev-lang/mono minimal
 dev-lang/perl berkdb gdbm
 dev-lang/php -apache2 curl gd imap
 dev-lang/python sqlite -ipv6
-dev-libs/boost context icu mpi tools
+dev-libs/boost context icu -mpi tools python_targets_python3_8 -python_targets_python3_7
 dev-libs/cyrus-sasl berkdb gdbm -ssl
 dev-libs/elfutils utils
 dev-libs/gmp static-libs
@@ -66,7 +66,7 @@ dev-libs/libaio static-libs
 dev-libs/libpcre2 jit pcre16 pcre32
 dev-libs/libpcre jit pcre16 pcre32
 dev-libs/libressl static-libs
-dev-libs/libxml2 icu
+dev-libs/libxml2 icu python_targets_python3_8
 dev-libs/lzo -static-libs
 dev-libs/nettle cpu_flags_x86_aes static-libs
 >=dev-libs/popt-1.16-r2 static-libs
@@ -79,15 +79,15 @@ dev-python/namespace-sphinxcontrib -python_targets_python3_7
 >=dev-python/pypax-0.9.5 ptpax
 dev-python/PyQt5 gui network printsupport svg webchannel widgets
 dev-qt/qtcore icu
-dev-qt/qtgui X evdev gif jpeg png tslib tuio
+dev-qt/qtgui X evdev gif jpeg png -tslib -tuio
 dev-qt/qtmultimedia widgets
 dev-qt/qtsingleapplication X
 dev-qt/qtsql sqlite
 dev-qt/qtwebchannel qml
-dev-qt/qtwebengine alsa designer jumbo-build widgets
+dev-qt/qtwebengine alsa -designer jumbo-build widgets pulseaudio -system-ffmpeg -system-icu
 dev-qt/qtwidgets png
 dev-ruby/racc ruby_targets_ruby25
-dev-vcs/git curl doc highlight -iconv perl
+dev-vcs/git curl -doc highlight -iconv perl python_targets_python3_8
 games-engines/scummvm aac alsa flac jpeg mp3 opengl png theora truetype vorbis
 gnustep-base/gnustep-base -gnutls
 gnustep-base/gnustep-make native-exceptions
@@ -99,7 +99,7 @@ media-fonts/font-misc-misc X
 media-fonts/powerline-symbols X
 media-gfx/digikam X webkit
 media-gfx/graphviz X cairo pdf svg
-media-gfx/imagemagick cxx X heif jpeg -jpeg2k png raw svg tiff xml
+media-gfx/imagemagick cxx X heif jpeg jpeg2k png -raw svg tiff xml wmf webp lzma truetype
 media-gfx/inkscape imagemagick jpeg
 media-gfx/xv jpeg png tiff
 media-libs/flac ogg
@@ -133,13 +133,13 @@ media-libs/vigra jpeg png tiff openexr
 media-plugins/alsa-plugins ffmpeg
 media-sound/moc aac alsa curl ffmpeg vorbis
 media-sound/mpd alsa curl ffmpeg flac icu lame libmpdclient openal twolame vorbis
-media-sound/pulseaudio X alsa bluetooth equalizer gdbm native-headset orc realtime sox tcpd
+media-sound/pulseaudio X alsa -bluetooth equalizer gdbm -native-headset orc realtime sox tcpd dbus
 media-video/ffmpeg X alsa amr amrenc chromium cpu_flags_x86_aes cpu_flags_x86_sse4_1 cpu_flags_x86_sse4_2 doc fdk gmp -jpeg2k kvazaar libass libcaca mp3 openal openh264 postproc rubberband ssh svg theora twolame -vaapi -vdpau vorbis vpx x264 x265 xvid zimg
 media-video/mpv X alsa cli cplugins drm dvd gbm jpeg lcms libmpv lua openal rubberband tools -vaapi -vdpau
 media-video/vlc ogg vorbis
 net-analyzer/linkchecker sqlite
 net-analyzer/nmap libssh2 ncat nping
-net-analyzer/rrdtool graph perl
+net-analyzer/rrdtool -graph perl
 net-im/pidgin idn perl prediction
 net-irc/irssi perl
 net-libs/glib-networking -gnome
@@ -171,13 +171,13 @@ sys-apps/dbus -X
 sys-apps/elfix ptpax
 sys-apps/etckeeper cron
 sys-apps/iproute2 -atm berkdb elf
-sys-apps/kmod tools
+sys-apps/kmod tools python_targets_python3_8
 sys-apps/lm-sensors sensord
 sys-apps/man-db berkdb gdbm
 sys-apps/pciutils dns
-sys-apps/portage doc
+sys-apps/portage doc python_targets_python3_8
 sys-apps/shadow skey
-sys-apps/util-linux slang static-libs tty-helpers
+sys-apps/util-linux slang static-libs tty-helpers python_targets_python3_8
 sys-apps/watchdog nfs
 >=sys-auth/pambase-20200304 elogind
 sys-auth/pambase mktemp
@@ -188,7 +188,7 @@ sys-block/parted device-mapper
 sys-boot/grub device-mapper -efiemu mount truetype -themes -grub_platforms_efi-64
 sys-cluster/openmpi heterogeneous mpi-threads romio
 sys-devel/binutils static-libs -gold
-sys-devel/clang llvm_targets_AArch64
+sys-devel/clang llvm_targets_AArch64 python_targets_python3_8
 sys-devel/gcc doc objc objc-gc graphite objc++ go fortran
 >=sys-devel/llvm-10.0.0 llvm_targets_NVPTX llvm_targets_AMDGPU
 sys-devel/llvm libffi -llvm_targets_AMDGPU -llvm_targets_NVPTX llvm_targets_AArch64
@@ -218,7 +218,7 @@ virtual/ffmpeg X mp3 theora -vaapi -vdpau x264
 virtual/imagemagick-tools jpeg svg png tiff
 virtual/libudev static-libs
 >=virtual/mpi-2.0-r4 cxx
-www-client/elinks bittorrent ftp debug javascript perl ruby -ipv6
+www-client/elinks bittorrent ftp debug -javascript perl ruby -ipv6
 www-client/w3m imlib
 x11-base/xorg-server xcsecurity xnest -ipv6
 x11-drivers/xf86-video-intel dri tools uxa xvmc
@@ -250,7 +250,7 @@ sys-process/psmisc -ipv6
 x11-apps/xauth -ipv6
 x11-apps/xhost -ipv6
 dev-lang/ruby -ipv6
-app-editors/vim -X
+app-editors/vim -X python_targets_python3_8 -python_targets_python3_7
 sys-kernel/zen-sources symlink
 sys-libs/glibc caps
 # required by sys-auth/pambase-20190426::core-kit
@@ -276,3 +276,262 @@ app-editors/nano minimal -magic
 app-shells/zsh doc maildir
 sys-boot/grub mount -grub_platforms_efi-64
 sys-apps/lm_sensors sensord
+# required by dev-perl/Wx-GLCanvas-0.90.0::perl-kit
+# required by media-gfx/slic3r-1.3.0-r2::media-kit[gui]
+# required by media-gfx/slic3r (argument)
+>=dev-perl/Alien-wxWidgets-0.690.0-r1 opengl
+# required by virtual/perl-threads-2.250.0::perl-kit
+# required by media-gfx/slic3r-1.3.0-r2::media-kit
+# required by media-gfx/slic3r (argument)
+>=dev-lang/perl-5.32.0 ithreads
+sys-kernel/debian-sources lvm
+net-dns/avahi -introspection python_targets_python3_8
+app-doc/doxygen qt5 clang
+sci-electronics/pcb opengl gcode gif png jpeg gtk dbus
+sci-libs/scipy -python_targets_python2_7
+dev-python/numpy lapack
+media-libs/libdc1394 python_targets_python3_8
+gnome-base/gconf python_targets_python3_8
+net-print/uranium python_targets_python3_8
+sys-apps/usbutils python_targets_python3_8
+sys-devel/distcc python_targets_python3_8
+sys-process/bpytop python_targets_python3_8
+app-admin/ego python_targets_python3_8
+dev-python/pyopenssl python_targets_python3_8
+dev-python/pyparsing python_targets_python3_8
+dev-python/pyrsistent python_targets_python3_8
+dev-python/requests python_targets_python3_8
+dev-python/semantic_version python_targets_python3_8
+dev-python/setuptools python_targets_python3_8
+dev-python/setuptools-rust python_targets_python3_8
+dev-python/setuptools_scm python_targets_python3_8
+dev-python/six python_targets_python3_8
+dev-python/toml python_targets_python3_8
+dev-python/tomli python_targets_python3_8
+# required by dev-python/requests-2.28.1::python-modules-kit
+# required by app-admin/ego-2.8.6::core-kit
+# required by sys-apps/portage-3.0.14-r9::core-kit
+# required by sys-apps/portage (argument)
+>=dev-python/chardet-5.0.0-r1 python_targets_python3_8
+# required by net-print/uranium-4.13.2::desktop-kit[-test,python_single_target_python3_7]
+# required by net-print/uranium (argument)
+>=dev-python/PyQt5-5.15.7 declarative
+dev-vcs/mercurial python_targets_python3_8
+media-libs/alsa-lib python_targets_python3_8
+net-libs/libtorrent-rasterbar python_targets_python3_8
+net-mail/mailutils python_targets_python3_8
+sys-apps/file python_targets_python3_8
+x11-base/xcb-proto python_targets_python3_8
+# required by net-dns/avahi-0.8::core-kit[dbus,python]
+# required by net-dns/avahi (argument)
+>=dev-python/dbus-python-1.2.18 python_targets_python3_8
+# required by dev-vcs/mercurial-6.2::dev-kit
+# required by dev-vcs/mercurial (argument)
+>=dev-python/zstandard-0.17.0 python_targets_python3_8
+dev-python/pygments python_targets_python3_8
+dev-python/pygobject python_targets_python3_8
+dev-python/zope-interface python_targets_python3_8
+dev-util/gdbus-codegen python_targets_python3_8
+dev-util/gtk-doc python_targets_python3_8
+dev-util/scons python_targets_python3_8
+dev-libs/gobject-introspection python_targets_python3_8
+dev-python/attrs python_targets_python3_8
+dev-python/cython python_targets_python3_8
+dev-python/docutils python_targets_python3_8
+dev-python/ipaddress python_targets_python3_8
+dev-python/mako python_targets_python3_8
+dev-python/markupsafe python_targets_python3_8
+dev-python/more-itertools python_targets_python3_8
+dev-python/pyelftools python_targets_python3_8
+dev-util/meson python_targets_python3_8
+app-arch/rpm python_targets_python3_8
+app-misc/pax-utils python_targets_python3_8
+app-portage/flaggie python_targets_python3_8
+app-portage/gentoolkit python_targets_python3_8
+# required by app-portage/layman-2.4.3::core-kit
+# required by @selected
+# required by @world (argument)
+>=dev-python/ssl-fetch-0.4 python_targets_python3_8
+virtual/python-enum34 python_targets_python3_8 -python_targets_python3_7
+dev-lang/python-exec python_targets_python3_8 -python_targets_python3_7
+# required by dev-python/six-1.16.0::python-modules-kit
+# required by net-mail/offlineimap-7.2.2::net-kit
+# required by @selected
+# required by @world (argument)
+>=dev-lang/python-exec-2.4.6-r2 python_targets_python3_7
+# required by dev-python/requests-2.28.1::python-modules-kit
+# required by app-admin/ego-2.8.6::core-kit
+# required by sys-apps/portage-3.0.14-r10::core-kit
+# required by app-portage/gentoolkit-0.5.0-r2::core-kit[-test]
+# required by @system
+# required by @world (argument)
+>=dev-python/certifi-10001 python_targets_python3_8
+# required by dev-python/urllib3-1.26.11::python-modules-kit
+# required by dev-python/requests-2.28.1::python-modules-kit
+# required by app-admin/ego-2.8.6::core-kit
+# required by sys-apps/portage-3.0.14-r10::core-kit
+# required by app-portage/gentoolkit-0.5.0-r2::core-kit[-test]
+# required by @system
+# required by @world (argument)
+>=dev-python/idna-3.3 python_targets_python3_8
+# required by dev-python/requests-2.28.1::python-modules-kit
+# required by app-admin/ego-2.8.6::core-kit
+# required by sys-apps/portage-3.0.14-r10::core-kit
+# required by app-portage/gentoolkit-0.5.0-r2::core-kit[-test]
+# required by @system
+# required by @world (argument)
+>=dev-python/urllib3-1.26.11 python_targets_python3_8
+# required by dev-python/requests-2.28.1::python-modules-kit[python_targets_python3_8,-python_targets_pypy3,python_targets_python3_9,-python_targets_python3_10,python_targets_python3_7]
+# required by app-admin/ego-2.8.6::core-kit
+# required by sys-apps/portage-3.0.14-r10::core-kit
+# required by app-portage/gentoolkit-0.5.0-r2::core-kit[-test]
+# required by @system
+# required by @world (argument)
+>=dev-python/charset_normalizer-2.1.0 python_targets_python3_8
+# required by dev-python/pyopenssl-22.0.0::python-modules-kit
+# required by dev-python/urllib3-1.26.11::python-modules-kit
+# required by dev-python/requests-2.28.1::python-modules-kit
+# required by app-admin/ego-2.8.6::core-kit
+# required by sys-apps/portage-3.0.14-r10::core-kit
+# required by app-portage/gentoolkit-0.5.0-r2::core-kit[-test]
+# required by @system
+# required by @world (argument)
+>=dev-python/cryptography-37.0.4 python_targets_python3_8
+# required by dev-python/cryptography-37.0.4::python-modules-kit
+# required by dev-python/urllib3-1.26.11::python-modules-kit
+# required by dev-python/requests-2.28.1::python-modules-kit
+# required by app-admin/ego-2.8.6::core-kit
+# required by sys-apps/portage-3.0.14-r10::core-kit
+# required by app-portage/gentoolkit-0.5.0-r2::core-kit[-test]
+# required by @system
+# required by @world (argument)
+>=dev-python/cffi-1.15.1 python_targets_python3_8
+# required by dev-python/setuptools-rust-1.4.1::python-modules-kit
+# required by dev-python/cryptography-37.0.4::python-modules-kit[python_targets_python3_8,-python_targets_python3_10,python_targets_python3_9,python_targets_python3_7]
+# required by dev-python/urllib3-1.26.11::python-modules-kit
+# required by dev-python/requests-2.28.1::python-modules-kit
+# required by app-admin/ego-2.8.6::core-kit
+# required by sys-apps/portage-3.0.14-r10::core-kit
+# required by app-portage/gentoolkit-0.5.0-r2::core-kit[-test]
+# required by @system
+# required by @world (argument)
+>=dev-python/wheel-0.37.1 python_targets_python3_8
+# required by dev-python/importlib_metadata-4.12.0::python-modules-kit[python_targets_python3_8,-python_targets_python3_10,python_targets_python3_9,python_targets_python3_7]
+# required by dev-python/setuptools_scm-7.0.5::python-modules-kit
+# required by dev-python/setuptools-rust-1.4.1::python-modules-kit
+# required by dev-python/cryptography-37.0.4::python-modules-kit[python_targets_python3_8,-python_targets_python3_10,python_targets_python3_9,python_targets_python3_7]
+# required by dev-python/urllib3-1.26.11::python-modules-kit
+# required by dev-python/requests-2.28.1::python-modules-kit
+# required by app-admin/ego-2.8.6::core-kit
+# required by sys-apps/portage-3.0.14-r10::core-kit
+# required by app-portage/gentoolkit-0.5.0-r2::core-kit[-test]
+# required by @system
+# required by @world (argument)
+>=dev-python/typing-extensions-3.7.4.3 python_targets_python3_8
+# required by dev-python/setuptools_scm-7.0.5::python-modules-kit
+# required by dev-python/setuptools-rust-1.4.1::python-modules-kit
+# required by dev-python/cryptography-37.0.4::python-modules-kit[python_targets_python3_8,-python_targets_python3_10,python_targets_python3_9,python_targets_python3_7]
+# required by dev-python/urllib3-1.26.11::python-modules-kit
+# required by dev-python/requests-2.28.1::python-modules-kit
+# required by app-admin/ego-2.8.6::core-kit
+# required by sys-apps/portage-3.0.14-r10::core-kit
+# required by app-portage/gentoolkit-0.5.0-r2::core-kit[-test]
+# required by @system
+# required by @world (argument)
+>=dev-python/importlib_metadata-4.12.0 python_targets_python3_8
+# required by dev-python/setuptools_scm-7.0.5::python-modules-kit
+# required by dev-python/importlib_metadata-4.12.0::python-modules-kit
+>=dev-python/packaging-21.3 python_targets_python3_8
+# required by dev-python/importlib_metadata-4.12.0::python-modules-kit
+# required by dev-python/setuptools_scm-7.0.5::python-modules-kit
+# required by dev-python/setuptools-rust-1.4.1::python-modules-kit
+# required by dev-python/cryptography-37.0.4::python-modules-kit[python_targets_python3_8,-python_targets_python3_10,python_targets_python3_9,python_targets_python3_7]
+# required by dev-python/urllib3-1.26.11::python-modules-kit
+# required by dev-python/requests-2.28.1::python-modules-kit
+# required by app-admin/ego-2.8.6::core-kit
+# required by sys-apps/portage-3.0.14-r10::core-kit
+# required by app-portage/gentoolkit-0.5.0-r2::core-kit[-test]
+# required by @system
+# required by @world (argument)
+>=dev-python/zipp-3.8.1 python_targets_python3_8
+# required by dev-python/cffi-1.15.1::python-modules-kit
+# required by dev-python/zstandard-0.17.0::python-modules-kit
+# required by dev-vcs/mercurial-6.2.1::dev-kit
+# required by app-portage/layman-2.4.3::core-kit[mercurial]
+# required by @selected
+# required by @world (argument)
+>=dev-python/pycparser-2.21 python_targets_python3_8
+# required by dev-python/pycparser-2.21::python-modules-kit
+# required by dev-python/cffi-1.15.1::python-modules-kit
+# required by dev-python/zstandard-0.17.0::python-modules-kit
+# required by dev-vcs/mercurial-6.2.1::dev-kit
+# required by app-portage/layman-2.4.3::core-kit[mercurial]
+# required by @selected
+# required by @world (argument)
+>=dev-python/ply-3.11 python_targets_python3_8
+# required by dev-python/urllib3-1.26.11::python-modules-kit
+# required by dev-python/requests-2.28.1::python-modules-kit
+# required by app-admin/ego-2.8.6::core-kit
+# required by sys-apps/portage-3.0.14-r10::core-kit
+# required by app-portage/gentoolkit-0.5.0-r2::core-kit[-test]
+# required by @system
+# required by @world (argument)
+>=dev-python/PySocks-1.7.1 python_targets_python3_8
+# required by app-admin/ego-2.8.6::core-kit
+# required by sys-apps/portage-3.0.14-r10::core-kit
+# required by app-portage/gentoolkit-0.5.0-r2::core-kit[-test]
+# required by @system
+# required by @world (argument)
+>=dev-python/appi-0.2.5 python_targets_python3_8
+# required by app-admin/ego-2.8.6::core-kit
+# required by sys-apps/portage-3.0.14-r10::core-kit
+# required by app-portage/gentoolkit-0.5.0-r2::core-kit[-test]
+# required by @system
+# required by @world (argument)
+>=dev-python/mwparserfromhell-0.6.4 python_targets_python3_8
+# required by dev-python/urllib3-1.26.11::python-modules-kit
+# required by dev-python/requests-2.28.1::python-modules-kit
+# required by app-admin/ego-2.8.6::core-kit
+# required by sys-apps/portage-3.0.14-r10::core-kit
+# required by app-portage/gentoolkit-0.5.0-r2::core-kit[-test]
+# required by @system
+# required by @world (argument)
+>=virtual/python-ipaddress-1.0-r1 python_targets_python3_8
+# required by dev-python/cryptography-37.0.4::python-modules-kit
+# required by dev-python/urllib3-1.26.11::python-modules-kit
+# required by dev-python/requests-2.28.1::python-modules-kit
+# required by app-admin/ego-2.8.6::core-kit
+# required by sys-apps/portage-3.0.14-r10::core-kit
+# required by app-portage/gentoolkit-0.5.0-r2::core-kit[-test]
+# required by @system
+# required by @world (argument)
+>=virtual/python-enum34-2 python_targets_python3_7
+# required by net-mail/offlineimap-7.2.2::net-kit
+# required by @selected
+# required by @world (argument)
+>=dev-python/six-1.16.0 python_targets_python2_7
+# required by dev-python/six-1.16.0::python-modules-kit
+# required by dev-python/cryptography-37.0.4::python-modules-kit
+# required by dev-python/urllib3-1.26.11::python-modules-kit
+# required by dev-python/requests-2.28.1::python-modules-kit
+# required by app-admin/ego-2.8.6::core-kit
+# required by sys-apps/portage-3.0.14-r10::core-kit
+# required by app-portage/gentoolkit-0.5.0-r2::core-kit[-test]
+# required by @system
+# required by @world (argument)
+>=dev-python/setuptools-63.4.2 python_targets_python2_7
+# required by dev-python/setuptools-compat-44.1.1::python-modules-kit
+# required by dev-python/setuptools-63.4.2::python-modules-kit[python_targets_python2_7]
+# required by dev-python/markupsafe-2.1.1::python-modules-kit
+# required by dev-python/jinja-3.1.2::python-modules-kit
+# required by sys-apps/systemd-tmpfiles-251.1::core-kit
+# required by virtual/tmpfiles-2::core-kit
+# required by sys-apps/portage-3.0.14-r10::core-kit
+# required by app-portage/gentoolkit-0.5.0-r2::core-kit[-test]
+# required by @system
+# required by @world (argument)
+>=dev-python/certifi-10001 python_targets_python2_7
+# required by dev-python/pygobject-3.36.1-r1::gnome-kit[cairo]
+# required by app-i18n/ibus-1.5.20.20190629::gnome-kit[python]
+# required by ibus (argument)
+>=dev-python/pycairo-1.17.0-r1 python_targets_python3_8

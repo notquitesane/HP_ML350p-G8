@@ -15,6 +15,7 @@ kmem::9:
 kvm:x:78:
 lp::7:lp
 lpadmin:x:106:
+mail:x:12:
 man:x:15:
 mem::8:
 messagebus:x:247:
@@ -38,3 +39,6 @@ utmp:x:406:
 uucp::14:uucp
 video::27:root
 wheel::10:root,nqs
+netdev:x:105:
+avahi:x:104:
+polkitd:x:103:
