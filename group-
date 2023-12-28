@@ -42,3 +42,4 @@ wheel::10:root,nqs
 netdev:x:105:
 avahi:x:104:
 polkitd:x:103:
+rtkit:x:102:

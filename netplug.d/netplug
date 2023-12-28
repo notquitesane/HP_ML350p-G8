@@ -1,17 +1,12 @@
 #!/bin/sh
-# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-#
-# Gentoo-specific netplug script
-#
 # This file gets called by netplug when it wants to bring an interface
 # up or down.
-#
 
 IFACE="$1"
 ACTION="$2"
 
-EXEC="/etc/init.d/net.${IFACE}"
+EXEC="/etc/init.d/netif.${IFACE}"
 
 case "${ACTION}" in
 	in)

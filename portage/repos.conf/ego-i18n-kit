@@ -1,0 +1,4 @@
+[i18n-kit]
+location = /var/git/meta-repo/kits/i18n-kit
+auto-sync = no
+priority = 1

@@ -1,10 +1,7 @@
 core-kit:funtoo/1.0/linux-gnu/arch/x86-64bit
-core-kit:funtoo/1.0/linux-gnu/arch/x86-64bit/subarch/intel64-nehalem
+core-kit:funtoo/1.0/linux-gnu/arch/x86-64bit/subarch/intel64-sandybridge
 core-kit:funtoo/1.0/linux-gnu/build/next
 core-kit:funtoo/1.0/linux-gnu/flavor/server
-core-kit:funtoo/1.0/linux-gnu/mix-ins/encrypted-root
-core-kit:funtoo/1.0/linux-gnu/mix-ins/hardened
-core-kit:funtoo/1.0/linux-gnu/mix-ins/console-extras
 browser-kit:funtoo/kits/python-kit/next
 core-gl-kit:funtoo/kits/python-kit/next
 core-hw-kit:funtoo/kits/python-kit/next
@@ -16,6 +13,7 @@ editors-kit:funtoo/kits/python-kit/next
 games-kit:funtoo/kits/python-kit/next
 gnome-kit:funtoo/kits/python-kit/next
 haskell-kit:funtoo/kits/python-kit/next
+i18n-kit:funtoo/kits/python-kit/next
 java-kit:funtoo/kits/python-kit/next
 kde-kit:funtoo/kits/python-kit/next
 lang-kit:funtoo/kits/python-kit/next

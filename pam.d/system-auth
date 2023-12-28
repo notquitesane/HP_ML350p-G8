@@ -8,7 +8,6 @@ password	required	pam_unix.so try_first_pass use_authtok nullok sha512 shadow
 password	optional	pam_permit.so
 session		optional	pam_limits.so 
 session		required	pam_env.so 
-session		optional	pam_mktemp.so
 session		required	pam_unix.so 
 session		optional	pam_permit.so
 -session        optional        pam_elogind.so

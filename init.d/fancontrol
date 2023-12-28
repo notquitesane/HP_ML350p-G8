@@ -19,3 +19,4 @@ depend() {
 	need localmount
 	use lm_sensors
 }
+
