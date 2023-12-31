@@ -44,3 +44,4 @@ avahi:x:104:
 polkitd:x:103:
 rtkit:x:102:
 at:x:25:
+arpwatch:x:101:
