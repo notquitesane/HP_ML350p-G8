@@ -1,0 +1,30 @@
+Script started on 2024-01-03 20:05:16-08:00 [TERM="screen" TTY="/dev/pts/1" COLUMNS="148" LINES="19"]
+[?2004h[01;33mfchroot[0m # !514; !515; !516
+[?2004lsh: !514: event not found
+[?2004h[01;33mfchroot[0m # git config -l
+[?2004l[?1049h[19;1H[?1h=core.repositoryformatversion=0[m
+core.filemode=true[m
+core.bare=false[m
+core.logallrefupdates=true[m
+remote.origin.url=git@github.com:notquitesane/HP_ML350p-G8[m
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*[m
+branch.master.remote=origin[m
+branch.master.merge=refs/heads/master[m
+pull.ff=false[m
+pull.rebase=true[m
+[3mlines 1-10/10 (END)[23m[K[K[K[3mlines 1-10/10 (END)[23m[K[K[K[3mlines 1-10/10 (END)[23m[K[K[?1l>[?1049l[?2004h[01;33mfchroot[0m # git push
+[?2004lerror: cannot run ssh: No such file or directory
+fatal: unable to fork
+[?2004h[01;33mfchroot[0m # eix -I --compact ei[K[Kssh
+[?2004l[0m[[0;1;7;32mI[0m[0m] [0;1;32mapp-admin[0m/[0;1;32msshguard[0m [0;36m[3][0m [0m([0;30;44m2.4.2[0m[0;1;34m{[0;1;34mtbz2[0m[0;1;34m}[0m[0m@[0;1;35m12/28/2023[0m[0m): protects hosts from brute force attacks against ssh[0m
+[0m[[0;1;7;32mI[0m[0m] [0mnet-libs[0m/[0;1mlibssh2[0m [0m([0;30;44m1.11.0[0m[0;1;34m{[0;1;34mtbz2[0m[0;1;34m}[0m[0;36m[2][0m[0m@[0;1;35m12/28/2023[0m[0m): Library implementing the SSH2 protocol[0m
+[0m[[0;1;7;32mI[0m[0m] [0;33mvirtual[0m/[0;1mssh[0m [0m([0;30;44m0[0m[0;1;34m{[0;1;34mtbz2[0m[0;1;34m}[0m[0m@[0;1;35m12/28/2023[0m[0m): Virtual for SSH client and server[0m
+[0;36m[1][0m [0m"argent-main" /var/db/repos/argent-main[0m
+[0;36m[2][0m [0m"net-kit" /var/git/meta-repo/kits/net-kit[0m
+[0;36m[3][0m [0m"security-kit" /var/git/meta-repo/kits/security-kit[0m
+
+[0mFound 3 matches[0m
+[0m[?2004h[01;33mfchroot[0m # exit
+[?2004lexit
+
+Script done on 2024-01-03 20:06:38-08:00 [COMMAND_EXIT_CODE="0"]
