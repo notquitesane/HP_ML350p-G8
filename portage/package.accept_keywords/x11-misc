@@ -12,3 +12,5 @@ x11-misc/xstroke ~amd64
 >=sys-apps/hp-health-10.91.1878.11 ~amd64
 # required by sys-apps/hp-ams (argument)
 >=sys-apps/hp-ams-2.10.0 ~amd64
+# required by =app-admin/eclean-kernel-9999 (argument)
+=app-admin/eclean-kernel-9999 **

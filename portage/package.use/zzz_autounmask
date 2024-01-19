@@ -214,7 +214,7 @@ virtual/ffmpeg X mp3 theora -vaapi -vdpau x264
 virtual/imagemagick-tools jpeg svg png tiff
 virtual/libudev static-libs
 >=virtual/mpi-2.0-r4 cxx
-www-client/elinks bittorrent ftp debug -javascript perl ruby -ipv6
+www-client/elinks -bittorrent ftp debug -javascript perl ruby -ipv6 gpm
 www-client/w3m imlib
 x11-base/xorg-server xcsecurity xnest -ipv6
 x11-drivers/xf86-video-intel dri tools uxa xvmc
@@ -278,7 +278,7 @@ sys-apps/lm_sensors sensord
 # required by media-gfx/slic3r-1.3.0-r2::media-kit
 # required by media-gfx/slic3r (argument)
 >=dev-lang/perl-5.32.0 ithreads
-sys-kernel/debian-sources lvm -cus binary
+sys-kernel/debian-sources -lvm -cus -binary -logo -custom-cflags
 net-dns/avahi -introspection 
 app-doc/doxygen qt5 clang
 sci-electronics/pcb opengl gcode gif png jpeg gtk dbus
