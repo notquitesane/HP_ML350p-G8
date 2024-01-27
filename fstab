@@ -2,19 +2,19 @@
 
 
 UUID=2be8788c-5a6e-482f-8b64-bbfcbca15f1d	/boot							ext2		noauto,noatime		0 2
-UUID=e201741c-4821-4b0f-b3ec-a5f7fa1bb184	/							f2fs		noatime			0 1
-UUID=305b0ccb-4a4b-4b65-a8f5-4e31547bd1bf	swap							sw		none			0 0
-UUID=c6bb81b8-2e54-49f0-85b9-b75aab846a0e	/var							ext4		defaults		0 0
-UUID=edca2c6d-6ce3-41aa-8091-4e69e6fdc012	/home							ext4		defaults		0 0
-UUID=60b29c99-198a-40c0-bb74-d9eb5c3233a1	/media							ext4		defaults		0 0
-UUID=466e323a-9d2e-480a-937a-0192ef60f7b6	/usr							ext4		defaults		0 0
-UUID=f3a51e74-a8a1-4042-8a51-f2c40794f421	/opt							ext4		defaults		0 0
-UUID=051a097c-2b92-42c3-b81c-7adbb45f18bc	/var/git						ext4		defaults		0 0
-UUID=a23911d2-5e46-40db-aad7-5d59888d2372	/var/cache/distfiles					ext4		defaults		0 0
-UUID=46227b1f-e9a1-4d31-9e7a-9c8fdebda41f	/var/cache/binpkgs					ext4		defaults		0 0
+UUID=e201741c-4821-4b0f-b3ec-a5f7fa1bb184	/								f2fs		noatime				0 1
+UUID=305b0ccb-4a4b-4b65-a8f5-4e31547bd1bf	swap							sw			none				0 0
+UUID=c6bb81b8-2e54-49f0-85b9-b75aab846a0e	/var							ext4		defaults			0 0
+UUID=edca2c6d-6ce3-41aa-8091-4e69e6fdc012	/home							ext4		defaults			0 0
+UUID=60b29c99-198a-40c0-bb74-d9eb5c3233a1	/media							ext4		defaults			0 0
+UUID=466e323a-9d2e-480a-937a-0192ef60f7b6	/usr							ext4		defaults			0 0
+UUID=f3a51e74-a8a1-4042-8a51-f2c40794f421	/opt							ext4		defaults			0 0
+UUID=051a097c-2b92-42c3-b81c-7adbb45f18bc	/var/git						ext4		defaults			0 0
+UUID=a23911d2-5e46-40db-aad7-5d59888d2372	/var/cache/portage/distfiles	ext4		defaults			0 0
+UUID=46227b1f-e9a1-4d31-9e7a-9c8fdebda41f	/var/cache/portage/packages	ext4		defaults			0 0
 
-/dev/shm					/var/tmp						tmpfs		size=10G,mode=1775	0 0
-/tmp						/dev/shm						tmpfs		nodev,nosuid,noexec	0 0
+/dev/shm					/var/tmp										tmpfs		size=10G,mode=1775	0 0
+/tmp						/dev/shm										tmpfs		nodev,nosuid,noexec	0 0
 
 #nfs exports
 
