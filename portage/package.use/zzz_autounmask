@@ -588,3 +588,4 @@ dev-lang/python-exec  -python_targets_python3_7
 # required by @world (argument)
 >=sys-apps/busybox-1.36.0 static
 sys-kernel/debian-sources-lts lvm binary
+app-admin/pydf python_targets_python2_7
