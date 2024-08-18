@@ -42,3 +42,4 @@ distcc:x:240:
 at:x:105:
 mail:x:12:
 arpwatch:x:170:
+ngrep:x:185:
