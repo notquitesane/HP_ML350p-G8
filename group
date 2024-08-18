@@ -40,3 +40,4 @@ lpadmin:x:106:
 ntp:x:123:
 distcc:x:240:
 at:x:105:
+mail:x:12:
