@@ -1,1 +1,87 @@
 app-benchmarks/bootchart2 PYTHON_SINGLE_TARGET: python3_11
+# required by app-benchmarks/bootchart2-0.14.9-r1::gentoo[cairo,python_single_target_python3_11]
+# required by app-benchmarks/bootchart2 (argument)
+>=dev-python/pycairo-1.26.1 python_targets_python3_11
+# required by dev-python/setuptools-scm-8.1.0::gentoo
+# required by dev-python/setuptools-72.1.0::gentoo
+# required by dev-python/distro-1.9.0::gentoo
+# required by app-admin/eclean-kernel-2.99.8::gentoo
+# required by app-admin/eclean-kernel (argument)
+>=dev-python/gpep517-16 python_targets_python3_11
+# required by dev-python/pycairo-1.26.1::gentoo
+# required by app-benchmarks/bootchart2-0.14.9-r1::gentoo[cairo,python_single_target_python3_11]
+# required by app-benchmarks/bootchart2 (argument)
+>=dev-python/setuptools-72.1.0 python_targets_python3_11
+# required by dev-python/setuptools-72.1.0::gentoo
+# required by dev-python/distro-1.9.0::gentoo
+# required by app-admin/eclean-kernel-2.99.8::gentoo
+# required by app-admin/eclean-kernel (argument)
+>=dev-python/jaraco-text-4.0.0 python_targets_python3_11
+# required by dev-python/setuptools-72.1.0::gentoo
+# required by dev-python/distro-1.9.0::gentoo
+# required by app-admin/eclean-kernel-2.99.8::gentoo
+# required by app-admin/eclean-kernel (argument)
+>=dev-python/more-itertools-10.3.0 python_targets_python3_11
+# required by dev-python/setuptools-72.1.0::gentoo
+# required by dev-python/distro-1.9.0::gentoo
+# required by app-admin/eclean-kernel-2.99.8::gentoo
+# required by app-admin/eclean-kernel (argument)
+>=dev-python/ordered-set-4.1.0 python_targets_python3_11
+# required by dev-python/setuptools-72.1.0::gentoo
+# required by dev-python/distro-1.9.0::gentoo
+# required by app-admin/eclean-kernel-2.99.8::gentoo
+# required by app-admin/eclean-kernel (argument)
+>=dev-python/packaging-24.1 python_targets_python3_11
+# required by dev-python/setuptools-72.1.0::gentoo
+# required by dev-python/distro-1.9.0::gentoo
+# required by app-admin/eclean-kernel-2.99.8::gentoo
+# required by app-admin/eclean-kernel (argument)
+>=dev-python/platformdirs-4.2.2 python_targets_python3_11
+# required by dev-python/setuptools-72.1.0::gentoo
+# required by dev-python/distro-1.9.0::gentoo
+# required by app-admin/eclean-kernel-2.99.8::gentoo
+# required by app-admin/eclean-kernel (argument)
+>=dev-python/wheel-0.43.0 python_targets_python3_11
+# required by dev-python/setuptools-72.1.0::gentoo
+# required by dev-python/distro-1.9.0::gentoo
+# required by app-admin/eclean-kernel-2.99.8::gentoo
+# required by app-admin/eclean-kernel (argument)
+>=dev-python/setuptools-scm-8.1.0 python_targets_python3_11
+# required by dev-python/setuptools-72.1.0::gentoo
+# required by dev-python/distro-1.9.0::gentoo
+# required by app-admin/eclean-kernel-2.99.8::gentoo
+# required by app-admin/eclean-kernel (argument)
+>=dev-python/trove-classifiers-2024.7.2 python_targets_python3_11
+# required by dev-python/wheel-0.43.0::gentoo
+# required by dev-python/setuptools-72.1.0::gentoo
+# required by dev-python/distro-1.9.0::gentoo
+# required by app-admin/eclean-kernel-2.99.8::gentoo
+# required by app-admin/eclean-kernel (argument)
+>=dev-python/flit-core-3.9.0 python_targets_python3_11
+# required by dev-python/jaraco-text-4.0.0::gentoo
+# required by dev-python/setuptools-72.1.0::gentoo
+# required by dev-python/distro-1.9.0::gentoo
+# required by app-admin/eclean-kernel-2.99.8::gentoo
+# required by app-admin/eclean-kernel (argument)
+>=dev-python/jaraco-context-5.3.0 python_targets_python3_11
+# required by dev-python/jaraco-text-4.0.0::gentoo
+# required by dev-python/setuptools-72.1.0::gentoo
+# required by dev-python/distro-1.9.0::gentoo
+# required by app-admin/eclean-kernel-2.99.8::gentoo
+# required by app-admin/eclean-kernel (argument)
+>=dev-python/jaraco-functools-4.0.2 python_targets_python3_11
+# required by dev-python/jaraco-context-5.3.0::gentoo[-python_targets_python3_10,python_targets_python3_11]
+# required by dev-python/jaraco-text-4.0.0::gentoo
+# required by dev-python/setuptools-72.1.0::gentoo
+# required by dev-python/distro-1.9.0::gentoo
+# required by app-admin/eclean-kernel-2.99.8::gentoo
+# required by app-admin/eclean-kernel (argument)
+>=dev-python/backports-tarfile-1.2.0 python_targets_python3_11
+# required by dev-python/gpep517-16::gentoo
+# required by dev-python/distro-1.9.0::gentoo
+# required by app-admin/eclean-kernel-2.99.8::gentoo
+# required by app-admin/eclean-kernel (argument)
+>=dev-python/installer-0.7.0 python_targets_python3_11
+# required by app-admin/pass-1.7.4-r2::gentoo
+# required by app-admin/pass (argument)
+>=media-gfx/qrencode-4.1.1-r1 png
