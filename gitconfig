@@ -1,3 +1,4 @@
 [safe]
 	directory = /var/db/repos/spikyatlinux
 	directory = /var/db/repos/flow
+	directory = /var/db/repos/nest
