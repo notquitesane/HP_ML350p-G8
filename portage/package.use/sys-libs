@@ -1,0 +1,7 @@
+sys-libs/gdbm berkdb
+sys-libs/glibc caps
+sys-libs/libblockdev bcache lvm
+sys-libs/ncurses ada
+sys-libs/readline utils
+sys-libs/slang png
+sys-libs/zlib minizip

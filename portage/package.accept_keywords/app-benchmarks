@@ -1,0 +1,4 @@
+app-benchmarks/bootchart2 ~amd64
+app-benchmarks/filebench ~amd64
+app-benchmarks/ioping ~amd64
+app-benchmarks/stress-ng ~amd64

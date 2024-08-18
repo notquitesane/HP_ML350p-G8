@@ -1,0 +1,2 @@
+net-p2p/qbittorrent -dbus
+net-p2p/rtorrent xmlrpc

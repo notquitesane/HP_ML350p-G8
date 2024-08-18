@@ -1,0 +1,6 @@
+dev-lang/fpc source
+dev-lang/luajit lua52compat
+dev-lang/mono minimal
+dev-lang/perl berkdb
+dev-lang/php -apache2 curl gd imap
+dev-lang/python sqlite

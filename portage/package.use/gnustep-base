@@ -1,0 +1,2 @@
+gnustep-base/gnustep-base -gnutls
+gnustep-base/gnustep-make native-exceptions

@@ -1,0 +1,9 @@
+dev-libs/boost context icu -mpi -tools
+dev-libs/cyrus-sasl berkdb -ssl
+dev-libs/elfutils utils
+dev-libs/libpcre jit pcre16 pcre32
+dev-libs/libpcre2 jit pcre16 pcre32
+dev-libs/libxml2 icu
+dev-libs/nettle cpu_flags_x86_aes
+dev-libs/xmlrpc-c curl
+dev-libs/xmlsec nss

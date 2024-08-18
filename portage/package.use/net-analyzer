@@ -1,0 +1,3 @@
+net-analyzer/linkchecker sqlite
+net-analyzer/nmap libssh2 ncat nping
+net-analyzer/rrdtool -graph perl

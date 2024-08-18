@@ -1,0 +1,2 @@
+virtual/ffmpeg mp3 theora -vaapi -vdpau x264
+virtual/imagemagick-tools jpeg svg png tiff

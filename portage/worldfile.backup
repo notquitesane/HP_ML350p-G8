@@ -1,0 +1,8 @@
+app-admin/eclean-kernel app-admin/killproc app-portage/golop app-shells/mksh dev-util/howdoi net-analyzer/arpwatch 
+net-irc/irssi-xmpp net-mail/renattach net-mail/ripmime net-misc/bridge-utils net-misc/dhcp net-misc/dhcpcd net-misc/dropbear net-misc/keychain 
+net-misc/netifrc net-misc/ntp net-misc/sshrc net-misc/youtube-dl net-p2p/qbittorrent net-p2p/rtorrent net-p2p/torrentinfo sci-calculators/units 
+sys-apps/biosdevname sys-apps/cciss_vol_status sys-apps/dstat sys-apps/earlyoom sys-apps/etckeeper sys-apps/ethtool sys-apps/fakechroot 
+sys-apps/hdparm sys-apps/hp-ams sys-apps/hp-health sys-apps/hwinfo sys-apps/lshw sys-apps/netplug sys-apps/pciutils sys-apps/preload 
+sys-apps/progress sys-apps/watchdog sys-block/hpacucli sys-block/hpssacli sys-block/parted sys-boot/grub sys-devel/crossdev sys-devel/distcc 
+sys-firmware/intel-microcode sys-fs/cryptsetup sys-fs/dd-rescue sys-fs/ddrescue sys-fs/dosfstools sys-fs/f2fs-tools sys-fs/lvm2 sys-kernel/genkernel 
+sys-process/acct sys-process/anacron sys-process/at sys-process/dcron sys-process/lsof sys-process/wait_on_pid sys-process/watchpid

@@ -1,0 +1,80 @@
+#!/bin/sh
+set -e
+
+case "$VCS" in
+	git)
+		if [ -x .git/hooks/pre-commit ]; then
+			if ! grep -q "etckeeper pre-commit" .git/hooks/pre-commit; then
+				echo "etckeeper warning: .git/hooks/pre-commit needs to be manually modified to run: etckeeper pre-commit -d `pwd`" >&2
+			fi
+		else
+			cat >.git/hooks/pre-commit <<EOF
+#!/bin/sh
+# pre-commit hook for etckeeper, to store metadata and do sanity checks
+set -e
+
+################################################################################
+# Do not run etckeeper inside linked worktrees. An additional worktree can be
+# very useful for resolving *.rpmsave/*.rpmnew files where you are able to merge
+# and check out older versions without changing the whole content of /etc.
+# However while doing such work, avoid modifying .etckeeper since only the /etc
+# directory should track permissions.
+#
+#
+# $ cd /etc
+# $ git worktree list
+# /etc                2984704 [main]
+# /root/etc.worktree  aeae148 [main.worktree]
+# $ git rev-parse --git-dir
+# .git
+# $ cd /root/etc.worktree
+# $ git rev-parse --git-dir
+# /etc/.git/worktrees/etc.worktree
+# $
+#
+################################################################################
+
+# Using 'rev-parse' + 'grep' rather than for instance parsing output from
+# 'worktree list' since the worktree command is not present in older git version
+# and parsing it would be slightly more complex.
+if git rev-parse --git-dir | grep -q /.git/worktrees
+then
+	# Inside worktree, do nothing.
+	exit
+fi
+
+etckeeper pre-commit -d `pwd`
+EOF
+		chmod +x .git/hooks/pre-commit
+		fi
+	;;
+	hg)
+		if [ -e .hg/hgrc ] && grep "^\[hooks\]" .hg/hgrc; then
+			if ! grep "^pre-commit" .hg/hgrc | grep -q "etckeeper pre-commit"; then
+				echo "etckeeper warning: [hooks] section in .hg/hgrc needs to be manually modified to contain: pre-commit = etckeeper pre-commit -d `pwd`" >&2
+			fi
+		else
+			touch .hg/hgrc
+			cat >>.hg/hgrc <<EOF
+[hooks]
+# pre-commit hook for etckeeper, to store metadata and do sanity checks
+pre-commit = etckeeper pre-commit -d `pwd`
+EOF
+		fi
+	;;
+	darcs)
+		if [ -e _darcs/prefs/defaults ]; then
+			if ! ( grep -q "record prehook etckeeper pre-commit" _darcs/prefs/defaults &&
+				grep -q "whatsnew prehook etckeeper pre-commit" _darcs/prefs/defaults ); then
+				echo "etckeeper warning: _darcs/prefs/defaults needs to be manually modified to run: etckeeper pre-commit -d `pwd`" >&2
+			fi
+		else
+			cat >_darcs/prefs/defaults <<EOF
+record prehook etckeeper pre-commit -d `pwd`
+record run-prehook
+whatsnew prehook etckeeper pre-commit -d `pwd`
+whatsnew run-prehook
+EOF
+		fi
+	;;
+esac

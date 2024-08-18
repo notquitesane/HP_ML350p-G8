@@ -1,0 +1,16 @@
+dev-haskell/binary hscolour
+dev-haskell/byteable hscolour
+dev-haskell/data-default-class hscolour
+dev-haskell/exceptions hscolour
+dev-haskell/hashable hscolour
+dev-haskell/mtl hscolour
+dev-haskell/network hscolour
+dev-haskell/old-locale hscolour
+dev-haskell/parsec hscolour
+dev-haskell/random hscolour
+dev-haskell/securemem hscolour
+dev-haskell/stm hscolour
+dev-haskell/text hscolour
+dev-haskell/transformers hscolour
+dev-haskell/transformers-compat hscolour
+dev-haskell/unordered-containers hscolour

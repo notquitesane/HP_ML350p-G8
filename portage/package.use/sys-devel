@@ -1,0 +1,5 @@
+sys-devel/binutils -gold
+sys-devel/clang llvm_targets_AArch64
+sys-devel/distcc -gssapi
+sys-devel/gcc doc objc objc-gc graphite objc++ go fortran
+sys-devel/llvm libffi -llvm_targets_AMDGPU llvm_targets_AArch64

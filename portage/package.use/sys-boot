@@ -1,0 +1,1 @@
+sys-boot/grub device-mapper -efiemu truetype -themes mount -grub_platforms_efi-64

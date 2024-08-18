@@ -1,0 +1,5 @@
+net-libs/glib-networking -gnome
+net-libs/libpcap -bluetooth netlink usb
+net-libs/libssh mbedtls server
+net-libs/nghttp2 jemalloc utils
+net-libs/zeromq drafts

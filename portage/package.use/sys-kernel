@@ -1,0 +1,5 @@
+sys-kernel/debian-sources -lvm -cus -binary -logo -custom-cflags
+sys-kernel/genkernel-next cryptsetup
+sys-kernel/gentoo-sources -symlink experimental
+sys-kernel/linux-firmware savedconfig
+sys-kernel/zen-sources symlink

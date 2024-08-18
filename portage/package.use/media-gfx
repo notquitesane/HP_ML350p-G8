@@ -1,0 +1,4 @@
+media-gfx/graphviz cairo pdf svg
+media-gfx/imagemagick cxx heif jpeg jpeg2k png -raw svg tiff xml wmf webp lzma truetype
+media-gfx/inkscape imagemagick jpeg
+media-gfx/xv jpeg png tiff

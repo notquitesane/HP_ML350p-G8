@@ -1,0 +1,4 @@
+=sys-kernel/zen-sources-5.8.8 ~amd64
+>=sys-kernel/zen-sources-5.8.13 ~amd64
+sys-kernel/dracut-crypt-ssh ~amd64
+sys-kernel/kccmp ~amd64

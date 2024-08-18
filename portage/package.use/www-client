@@ -1,0 +1,2 @@
+www-client/elinks -bittorrent ftp debug -javascript perl gpm
+www-client/w3m imlib
