@@ -1,1 +1,2 @@
 CATALOG "/etc/sgml/sgml-ent.cat"
+CATALOG "/etc/sgml/dsssl-docbook-stylesheets.cat"
