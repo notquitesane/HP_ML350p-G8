@@ -1,2 +1,4 @@
 # required by =sys-apps/hp-health-10.9.3::flow (argument)
 >=sys-apps/hp-health-10.9.3 hpe
+# required by sys-block/hpssacli (argument)
+>=sys-block/hpssacli-6.25.9.0 hp-proliant-essentials
