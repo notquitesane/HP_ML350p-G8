@@ -85,3 +85,4 @@ app-benchmarks/bootchart2 PYTHON_SINGLE_TARGET: python3_11
 # required by app-admin/pass-1.7.4-r2::gentoo
 # required by app-admin/pass (argument)
 >=media-gfx/qrencode-4.1.1-r1 png
+sys-kernel/installkernel dracut grub ugrd
