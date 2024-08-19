@@ -4,3 +4,5 @@
 =sys-apps/dust-9999 **
 # required by =sys-apps/dust-1.0.0 (argument)
 =sys-apps/dust-1.0.0 ~amd64
+# required by sci-biology/foldingathome (argument)
+=sci-biology/foldingathome-7.6.21 ~amd64
