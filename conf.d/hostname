@@ -1,2 +1,1 @@
-# Hostname fallback if /etc/hostname does not exist
-hostname="localhost"
+hostname="mavis"

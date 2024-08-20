@@ -1,21 +1,21 @@
-# /etc/fstab: static file system information.
-#
-# See the manpage fstab(5) for more information.
-#
-# NOTE: The root filesystem should have a pass number of either 0 or 1.
-#       All other filesystems should have a pass number of 0 or greater than 1.
-#
-# NOTE: Even though we list ext4 as the type here, it will work with ext2/ext3
-#       filesystems.  This just tells the kernel to use the ext4 driver.
-#
-# NOTE: You can use full paths to devices like /dev/sda3, but it is often
-#       more reliable to use filesystem labels or UUIDs. See your filesystem
-#       documentation for details on setting a label. To obtain the UUID, use
-#       the blkid(8) command.
+# <fs>			<mountpoint>	<type>		<opts>		<dump/pass>
 
-# <fs>			<mountpoint>	<type>		<opts>		<dump> <pass>
 
-#LABEL=boot		/boot		ext4		defaults	1 2
-#UUID=58e72203-57d1-4497-81ad-97655bd56494		/		xfs		defaults		0 1
-#LABEL=swap		none		swap		sw		0 0
-#/dev/cdrom		/mnt/cdrom	auto		noauto,ro	0 0
+UUID=2be8788c-5a6e-482f-8b64-bbfcbca15f1d	/boot				ext2		noauto,noatime		0 2
+/dev/mapper/vg-root				/				ext4		noatime			0 1
+#UUID=305b0ccb-4a4b-4b65-a8f5-4e31547bd1bf	swap				sw		none			0 0
+/dev/mapper/vg-var				/var				ext4		defaults		0 0
+/dev/mapper/vg-home				/home				ext4		defaults		0 0
+/dev/mapper/vg-media				/media				ext4		defaults		0 0
+/dev/mapper/vg-usr				/usr				ext4		defaults		0 0
+/dev/mapper/vg-opt				/opt				ext4		defaults		0 0
+/dev/mapper/vg-portag				/var/cache/distfiles		ext4		defaults		0 0
+
+/dev/shm					/var/tmp			tmpfs		size=10G,mode=1775	0 0
+/tmp						/dev/shm			tmpfs		nodev,nosuid,noexec	0 0
+
+#nfs exports
+
+/media						/export/media			none		bind			0 0
+/var/cache/distfiles				/export/distfiles		none		bind			0 0
+/home						/export/home			none		bind			0 0
