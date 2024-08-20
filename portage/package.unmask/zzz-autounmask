@@ -3,3 +3,6 @@
 # AMD64 Team <amd64@gentoo.org>
 # Mask packages that rely on amd64 multilib
 =sci-biology/foldingathome-7.6.21
+# required by sys-block/hpacucli::argent-main (argument)
+# /etc/portage/package.mask/all_categories:
+=sys-block/hpacucli-9.40.12.0
