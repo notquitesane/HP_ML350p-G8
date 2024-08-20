@@ -1,0 +1,4 @@
+config_eno1="dhcp"
+config_eno2="dhcp"
+config_eno3="dhcp"
+config_eno4="dhcp"
