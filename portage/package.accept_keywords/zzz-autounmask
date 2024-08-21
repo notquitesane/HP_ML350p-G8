@@ -1,7 +1,6 @@
 # required by =sys-apps/hp-health-10.9.3::flow (argument)
 =sys-apps/hp-health-10.9.3 ~amd64
 # required by =sys-apps/dust-9999 (argument)
-=sys-apps/dust-9999 **
 # required by =sys-apps/dust-1.0.0 (argument)
 =sys-apps/dust-1.0.0 ~amd64
 # required by sci-biology/foldingathome (argument)
