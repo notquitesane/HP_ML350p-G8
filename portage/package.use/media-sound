@@ -1,3 +1,0 @@
-media-sound/moc aac alsa curl ffmpeg vorbis
-media-sound/mpd alsa curl ffmpeg flac icu lame libmpdclient openal twolame vorbis
-media-sound/pulseaudio -bluetooth

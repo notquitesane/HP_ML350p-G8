@@ -1,3 +1,2 @@
 sys-fs/cryptsetup -argon2 -gcrypt -nettle openssl urandom -fips
 sys-fs/dd-rescue cpu_flags_x86_sse4_2
-sys-fs/udisks lvm

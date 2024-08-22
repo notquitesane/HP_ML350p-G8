@@ -1,23 +1,2 @@
-media-libs/flac ogg
 media-libs/freetype -infinality png utils fontforge
-media-libs/gd fontconfig jpeg png truetype
-media-libs/gegl cairo
-media-libs/gst-plugins-base ogg
-media-libs/harfbuzz cairo icu truetype
-media-libs/imlib2 -gif -jpeg -mp3 -png -shm -tiff -webp
-media-libs/jbig2dec png
-media-libs/libass fontconfig
-media-libs/libcanberra alsa
 media-libs/libpng apng
-media-libs/libsdl opengl
-media-libs/libsndfile alsa
-media-libs/libvpx postproc
-media-libs/mesa gles1 gles2 -vaapi -vdpau
-media-libs/netpbm jbig jpeg png tiff
-media-libs/openal alsa cpu_flags_x86_sse4_1
-media-libs/opencv openexr
-media-libs/phonon -vlc
-media-libs/sdl-image jpeg png
-media-libs/sdl-mixer flac mp3 smpeg vorbis
-media-libs/tiff jbig jpeg
-media-libs/vigra jpeg png tiff openexr

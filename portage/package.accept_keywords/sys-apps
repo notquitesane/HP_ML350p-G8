@@ -1,4 +1,3 @@
+=sys-apps/dust-1.0.0 ~amd64
+=sys-apps/hp-health-10.9.3 ~amd64
 >=sys-apps/hp-ams-2.10.0 ~amd64
->=sys-apps/hp-health-10.91.1878.11 ~amd64
-sys-apps/earlyoom ~amd64
-sys-apps/tuned ~amd64

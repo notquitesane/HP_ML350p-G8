@@ -1,9 +1,3 @@
 >=app-portage/portconf-1.6.9 ~amd64
->=app-portage/showem-1.0.3 ~amd64
-app-portage/diffmask ~amd64
-app-portage/gentmaint ~amd64
 app-portage/gentoopm ~amd64
 app-portage/golop ~amd64
-app-portage/logclean ~amd64
-app-portage/portage-bashrc-mv ~amd64
-app-portage/world-mv ~amd64

@@ -1,2 +1,0 @@
-app-emulation/docker aufs
-app-emulation/qemu curl jpeg nfs png qemu_softmmu_targets_aarch64 qemu_user_targets_aarch64 qemu_user_targets_x86_64 ssh usb usbredir vde vte

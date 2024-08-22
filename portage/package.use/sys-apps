@@ -1,12 +1,10 @@
-sys-apps/busybox -make-symlinks math mdev savedconfig -sep-usr
+>=sys-apps/util-linux-2.39.4-r1 caps
 sys-apps/coreutils gmp
 sys-apps/etckeeper cron
 sys-apps/iproute2 -atm berkdb elf
 sys-apps/kmod tools
 sys-apps/lm-sensors sensord
-sys-apps/lm_sensors sensord
 sys-apps/pciutils dns
 sys-apps/portage doc
 sys-apps/shadow skey
 sys-apps/util-linux slang tty-helpers
-sys-apps/watchdog nfs

@@ -1,3 +1,0 @@
-media-video/ffmpeg alsa amr amrenc chromium cpu_flags_x86_aes cpu_flags_x86_sse4_1 cpu_flags_x86_sse4_2 doc fdk gmp -jpeg2k kvazaar libass libcaca mp3 openal openh264 postproc rubberband ssh svg theora twolame -vaapi -vdpau vorbis vpx x264 x265 xvid zimg
-media-video/mpv alsa cli drm dvd jpeg lcms libmpv lua openal rubberband tools -vaapi -vdpau
-media-video/vlc ogg

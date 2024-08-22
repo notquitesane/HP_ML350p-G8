@@ -1,3 +1,2 @@
-=sys-apps/hponcfg-5.4.0.0 hpe
 >=sys-apps/hp-ams-2.10.0 hpe
->=sys-apps/hp-health-10.91.1878.11 hpe
+>=sys-apps/hp-health-10.9.3 hpe

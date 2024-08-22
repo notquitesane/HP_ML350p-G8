@@ -1,5 +1,2 @@
-app-admin/conky curl hddtemp imlib iostats lua-cairo lua-imlib math moc mpd rss
-app-admin/keepassxc browser -autotype
 app-admin/pass -dmenu importers
 app-admin/sudo -skey
-app-admin/sysstat lm-sensors
