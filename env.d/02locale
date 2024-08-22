@@ -1,1 +1,3 @@
-LANG=C.UTF8
+# Configuration file for eselect
+# This file has been automatically generated.
+LANG="en_US.utf8"

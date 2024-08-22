@@ -89,3 +89,6 @@ sys-kernel/installkernel dracut grub ugrd
 # required by app-portage/pfl-3.5.2::gentoo[network-cron]
 # required by pfl (argument)
 >=sys-apps/util-linux-2.39.4-r1 caps
+sys-firmware/intel-microcode hostonly
+sys-process/htop-3.3.0::gentoo lm-sensors
+sys-process/htop lm-sensors
