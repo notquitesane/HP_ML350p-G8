@@ -9,7 +9,7 @@ UUID=2be8788c-5a6e-482f-8b64-bbfcbca15f1d	/boot				ext2		noauto,noatime		0 2
 /dev/mapper/vg-media				/media				ext4		defaults		0 0
 /dev/mapper/vg-usr				/usr				ext4		defaults		0 0
 /dev/mapper/vg-opt				/opt				ext4		defaults		0 0
-/dev/mapper/vg-portag				/var/cache/distfiles		ext4		defaults		0 0
+/dev/mapper/vg-portage				/var/cache/distfiles		ext4		defaults		0 0
 
 /dev/shm					/var/tmp			tmpfs		size=10G,mode=1775	0 0
 /tmp						/dev/shm			tmpfs		nodev,nosuid,noexec	0 0
