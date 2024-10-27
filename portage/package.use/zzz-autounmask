@@ -1,2 +1,3 @@
 app-shells/zsh doc examples maildir
 sys-fs/lvm2 lvm
+sys-kernel/gentoo-sources experimental symlink
