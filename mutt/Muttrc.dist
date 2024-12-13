@@ -23,7 +23,7 @@ macro index,pager,attach,compose \cb "\
 "call urlview to extract URLs out of a message"
 
 # Show documentation when pressing F1
-macro generic,pager <F1> "<shell-escape> less /usr/share/doc/mutt-2.2.12/manual.txt<Enter>" "show Mutt documentation"
+macro generic,pager <F1> "<shell-escape> less /usr/share/doc/mutt-2.2.12-r1/manual.txt<Enter>" "show Mutt documentation"
 
 # show the incoming mailboxes list (just like "mutt -y") and back when pressing "y"
 # note: these macros have been subsumed by the <browse-mailboxes> function.
