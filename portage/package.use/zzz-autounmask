@@ -1,3 +1,4 @@
 app-shells/zsh doc examples maildir
 sys-fs/lvm2 lvm
 sys-kernel/gentoo-sources experimental symlink
+dev-python/jaraco-collections PYTHON_TARGETS: python3_11
