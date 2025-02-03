@@ -100,14 +100,16 @@ stop() {
 reload() {
 	checkkernel || return 1
 	checkrules || return 1
-	ebegin "Flushing firewall"
-	local has_errors=0 a
+	local has_errors=0 a flushed=0
 	for a in $(cat ${iptables_proc}) ; do
-		${iptables_bin} --wait ${iptables_lock_wait_time} -F -t $a
-		[ $? -ne 0 ] && has_errors=1
+		if ! grep -q "^\*${a}$" "${iptables_save}" ; then
+			[ $flushed -eq 0 ] && ebegin "Flushing firewall" && flushed=1
+			${iptables_bin} --wait ${iptables_lock_wait_time} -F -t $a
+			[ $? -ne 0 ] && has_errors=1
 
-		${iptables_bin} --wait ${iptables_lock_wait_time} -X -t $a
-		[ $? -ne 0 ] && has_errors=1
+			${iptables_bin} --wait ${iptables_lock_wait_time} -X -t $a
+			[ $? -ne 0 ] && has_errors=1
+		fi
 	done
 	eend ${has_errors}
 
