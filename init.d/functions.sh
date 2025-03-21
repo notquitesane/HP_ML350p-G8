@@ -1,1 +1,1 @@
-/lib/rc/sh/functions.sh
+/usr/libexec/rc/sh/functions.sh
