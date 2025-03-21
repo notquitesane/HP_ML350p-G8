@@ -9,4 +9,6 @@
   <delegatePublic publicIdStartString="ISO 8879:1986" catalog="file:///etc/xml/docbook"/>
   <delegateSystem systemIdStartString="http://docbook.sourceforge.net/release/xsl/" catalog="file:///etc/xml/docbook"/>
   <delegateURI uriStartString="http://docbook.sourceforge.net/release/xsl/" catalog="file:///etc/xml/docbook"/>
+  <delegateSystem systemIdStartString="http://docbook.sourceforge.net/release/xsl-ns/" catalog="file:///etc/xml/docbook"/>
+  <delegateURI uriStartString="http://docbook.sourceforge.net/release/xsl-ns/" catalog="file:///etc/xml/docbook"/>
 </catalog>
