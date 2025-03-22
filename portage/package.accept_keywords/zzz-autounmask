@@ -1,2 +1,4 @@
 # required by =app-shells/bash-5.3_beta_p20250109 (argument)
 =app-shells/bash-5.3_beta_p20250109 **
+# required by sys-kernel/dracut-crypt-ssh (argument)
+=sys-kernel/dracut-crypt-ssh-1.0.8-r1 ~amd64
