@@ -75,7 +75,9 @@ GRUB_DISABLE_LINUX_PARTUUID=false
 # to know when they can make a choice on the menu.
 GRUB_INIT_TUNE="60 800 1"
 
-GRUB_CMDLINE_LINUX_DEFAULT="net.ifnames=0 rootfstype=ext4 docrypt udev dolvm root=UUID=0c2b33c1-7a50-4b1d-872c-9b04539d5264 rd.luks.uuid=a5d87558-4672-478b-9ef9-e2d9fd3c93d2 rd.lvm.vg=vg root_trim=yes \
+GRUB_CMDLINE_LINUX_DEFAULT="net.ifnames=0 rootfstype=ext4 docrypt udev dolvm \
+root=UUID=0c2b33c1-7a50-4b1d-872c-9b04539d5264 rd.luks.uuid=a5d87558-4672-478b-9ef9-e2d9fd3c93d2 \
+rd.luks.uuid=84306019-0928-44da-bf89-31d62643e66a rd.lvm.vg=vg root_trim=yes \
 rd.luks.allow-discards=edRm8q-GEaO-uOEM-50ZV-E1AM-g3ua-3r65Qe rd.info rd.debug rd.udev.debug"
 GRUB_PRELOAD_MODULES="lvm crypto ext4 luks"
 
