@@ -1,1 +1,1 @@
-sys-firmware/intel-microcode hostonly
+sys-firmware/intel-microcode hostonly -initramfs
