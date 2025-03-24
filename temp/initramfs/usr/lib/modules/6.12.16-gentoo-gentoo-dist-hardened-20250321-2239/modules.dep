@@ -1,0 +1,42 @@
+kernel/arch/x86/crypto/sha1-ssse3.ko:
+kernel/arch/x86/crypto/sha256-ssse3.ko:
+kernel/arch/x86/crypto/sha512-ssse3.ko:
+kernel/arch/x86/crypto/ghash-clmulni-intel.ko:
+kernel/arch/x86/crypto/polyval-clmulni.ko: kernel/crypto/polyval-generic.ko
+kernel/arch/x86/crypto/crc32c-intel.ko:
+kernel/arch/x86/crypto/crc32-pclmul.ko:
+kernel/arch/x86/crypto/crct10dif-pclmul.ko:
+kernel/crypto/crc32_generic.ko:
+kernel/crypto/polyval-generic.ko:
+kernel/crypto/essiv.ko:
+kernel/drivers/block/loop.ko:
+kernel/drivers/mfd/intel_pmc_bxt.ko:
+kernel/drivers/scsi/sr_mod.ko: kernel/drivers/cdrom/cdrom.ko
+kernel/drivers/scsi/sg.ko:
+kernel/drivers/net/ethernet/broadcom/tg3.ko:
+kernel/drivers/cdrom/cdrom.ko:
+kernel/drivers/usb/storage/uas.ko: kernel/drivers/usb/storage/usb-storage.ko
+kernel/drivers/usb/storage/usb-storage.ko:
+kernel/drivers/input/serio/serio_raw.ko:
+kernel/drivers/watchdog/iTCO_wdt.ko: kernel/drivers/mfd/intel_pmc_bxt.ko kernel/drivers/watchdog/iTCO_vendor_support.ko
+kernel/drivers/watchdog/iTCO_vendor_support.ko:
+kernel/drivers/watchdog/hpwdt.ko:
+kernel/drivers/md/dm-mod.ko:
+kernel/drivers/md/dm-bufio.ko: kernel/drivers/md/dm-mod.ko
+kernel/drivers/md/dm-bio-prison.ko:
+kernel/drivers/md/dm-crypt.ko: kernel/drivers/md/dm-mod.ko
+kernel/drivers/md/dm-multipath.ko: kernel/drivers/md/dm-mod.ko
+kernel/drivers/md/dm-round-robin.ko: kernel/drivers/md/dm-multipath.ko kernel/drivers/md/dm-mod.ko
+kernel/drivers/md/dm-snapshot.ko: kernel/drivers/md/dm-bufio.ko kernel/drivers/md/dm-mod.ko
+kernel/drivers/md/persistent-data/dm-persistent-data.ko: kernel/drivers/md/dm-bufio.ko kernel/drivers/md/dm-mod.ko
+kernel/drivers/md/dm-mirror.ko: kernel/drivers/md/dm-region-hash.ko kernel/drivers/md/dm-log.ko kernel/drivers/md/dm-mod.ko
+kernel/drivers/md/dm-log.ko: kernel/drivers/md/dm-mod.ko
+kernel/drivers/md/dm-region-hash.ko: kernel/drivers/md/dm-log.ko kernel/drivers/md/dm-mod.ko
+kernel/drivers/md/dm-zero.ko: kernel/drivers/md/dm-mod.ko
+kernel/drivers/md/dm-cache.ko: kernel/drivers/md/dm-bio-prison.ko kernel/drivers/md/persistent-data/dm-persistent-data.ko kernel/drivers/md/dm-bufio.ko kernel/drivers/md/dm-mod.ko
+kernel/drivers/md/dm-cache-smq.ko: kernel/drivers/md/dm-cache.ko kernel/drivers/md/dm-bio-prison.ko kernel/drivers/md/persistent-data/dm-persistent-data.ko kernel/drivers/md/dm-bufio.ko kernel/drivers/md/dm-mod.ko
+kernel/net/802/stp.ko: kernel/net/llc/llc.ko
+kernel/net/802/garp.ko: kernel/net/802/stp.ko kernel/net/llc/llc.ko
+kernel/net/802/mrp.ko:
+kernel/net/8021q/8021q.ko: kernel/net/802/garp.ko kernel/net/802/stp.ko kernel/net/llc/llc.ko kernel/net/802/mrp.ko
+kernel/net/llc/llc.ko:

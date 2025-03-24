@@ -1,0 +1,1 @@
+ --force --verbose --kernel-image 'arch/x86/boot/bzImage' --no-uefi

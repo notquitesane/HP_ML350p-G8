@@ -1,0 +1,13 @@
+tty::5:
+dialout::20:
+kmem::9:
+input::97:
+video::27:root
+render:x:249:
+audio::18:
+lp::7:lp
+disk::6:root,adm
+cdrom::19:
+tape::26:root
+kvm:x:78:
+floppy::11:root

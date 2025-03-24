@@ -1,0 +1,14 @@
+/etc/lvm/lvm.conf
+/etc/lvm/lvmlocal.conf
+/etc/udev/hwdb.bin
+/etc/udev/udev.conf
+/lib/dracut/hooks/initqueue/finished/devexists-\x2fdev\x2fmapper\x2fvg-root.sh
+/lib/dracut/hooks/initqueue/finished/devexists-\x2fdev\x2fmapper\x2fvg-var.sh
+/lib/dracut/hooks/initqueue/finished/devexists-\x2fdev\x2fmapper\x2fvg-home.sh
+/lib/dracut/hooks/initqueue/finished/devexists-\x2fdev\x2fmapper\x2fvg-media.sh
+/lib/dracut/hooks/initqueue/finished/devexists-\x2fdev\x2fmapper\x2fvg-usr.sh
+/lib/dracut/hooks/initqueue/finished/devexists-\x2fdev\x2fmapper\x2fvg-opt.sh
+/lib/dracut/hooks/initqueue/finished/devexists-\x2fdev\x2fmapper\x2fvg-portage.sh
+/lib/dracut/hooks/initqueue/finished/devexists-\x2fdev\x2fshm.sh
+/lib/dracut/hooks/initqueue/finished/devexists-\x2fdev\x2fmapper\x2fvg-usr.sh
+/lib/dracut/hooks/initqueue/finished/devexists-\x2fdev\x2fdisk\x2fby-uuid\x2f2be8788c-5a6e-482f-8b64-bbfcbca15f1d.sh
