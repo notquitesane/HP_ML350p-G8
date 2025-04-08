@@ -1,1 +1,1 @@
-../../../usr/bin/eix-postsync
+/mnt/gentoo/etc/portage/postsync.d/../../../usr/bin/eix-postsync
