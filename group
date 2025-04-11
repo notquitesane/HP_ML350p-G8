@@ -43,3 +43,4 @@ at:x:105:
 mail:x:12:
 arpwatch:x:170:
 ngrep:x:185:
+sgx:x:405:
