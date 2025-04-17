@@ -1,1 +1,5 @@
-# /etc/exports: NFS file systems being exported.  See exports(5).
+/export			10.255.0.0/24(insecure,rw,sync,no_subtree_check,crossmnt,fsid=0)
+/export/binpkgs		10.255.0.0/24(insecure,rw,sync,no_subtree_check)
+/export/distfiles	10.255.0.0/24(insecure,rw,sync,no_subtree_check)
+/export/home		10.255.0.0/24(insecure,rw,sync,no_subtree_check)
+/export/media		10.255.0.0/24(insecure,rw,sync,no_subtree_check)
