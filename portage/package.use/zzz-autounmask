@@ -1,3 +1,7 @@
 app-shells/zsh doc examples maildir
 sys-fs/lvm2 lvm
 sys-kernel/gentoo-sources experimental symlink
+# required by app-benchmarks/bootchart2-0.14.9-r1::gentoo[python_single_target_python3_11,cairo]
+# required by @selected
+# required by @world (argument)
+>=dev-python/pycairo-1.28.0 python_targets_python3_11
