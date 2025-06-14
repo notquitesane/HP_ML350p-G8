@@ -1,2 +1,4 @@
 # required by =app-shells/bash-5.3_beta_p20250109 (argument)
 =app-shells/bash-5.3_beta_p20250109 **
+# required by sys-fs/archivemount (argument)
+=sys-fs/archivemount-0.9.1 ~amd64
