@@ -1,3 +1,3 @@
 sys-devel/binutils -gold
 sys-devel/distcc -gssapi
-sys-devel/gcc doc objc objc-gc graphite objc++ go fortran
+sys-devel/gcc doc objc objc-gc graphite objc++ go cet fortran jit lto nls objc -objc objc++ objc-gc openmp pgo rust sanitize zstd
