@@ -5,3 +5,4 @@ sys-kernel/gentoo-sources experimental symlink
 # required by @selected
 # required by @world (argument)
 >=dev-python/pycairo-1.28.0 python_targets_python3_11
+dev-qt/qtbase X
