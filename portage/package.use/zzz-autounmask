@@ -5,7 +5,7 @@ sys-kernel/gentoo-sources experimental symlink
 # required by @selected
 # required by @world (argument)
 >=dev-python/pycairo-1.28.0 python_targets_python3_11
-dev-qt/qtbase X
+dev-qt/qtbase X accessibility opengl
 # required by dev-qt/qtbase-6.9.2::gentoo[gui]
 # required by dev-qt/qttools-6.9.2::gentoo[assistant]
 # required by dev-qt/qttranslations-6.9.2::gentoo
