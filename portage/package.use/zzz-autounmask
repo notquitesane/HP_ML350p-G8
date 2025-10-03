@@ -11,3 +11,14 @@ dev-qt/qtbase X
 # required by dev-qt/qttranslations-6.9.2::gentoo
 >=x11-libs/libxkbcommon-1.10.0 X
 dev-qt/qtwebengine accessibility opengl pulseaudio qml
+# required by dev-qt/qtwebengine-6.9.2-r1::gentoo
+# required by qtwebengine (argument)
+>=dev-qt/qtbase-6.9.2 accessibility opengl
+# required by dev-qt/qtwebengine-6.9.2-r1::gentoo[opengl]
+# required by qtwebengine (argument)
+>=media-libs/libglvnd-1.7.0 X
+# required by media-sound/pulseaudio-daemon-17.0-r1::gentoo[alsa-plugin,alsa]
+# required by media-libs/libpulse-17.0::gentoo
+# required by dev-qt/qtwebengine-6.9.2-r1::gentoo[pulseaudio]
+# required by qtwebengine (argument)
+>=media-plugins/alsa-plugins-1.2.12 pulseaudio
