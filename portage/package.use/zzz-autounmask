@@ -10,3 +10,4 @@ dev-qt/qtbase X
 # required by dev-qt/qttools-6.9.2::gentoo[assistant]
 # required by dev-qt/qttranslations-6.9.2::gentoo
 >=x11-libs/libxkbcommon-1.10.0 X
+dev-qt/qtwebengine accessibility opengl pulseaudio qml
