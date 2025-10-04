@@ -22,3 +22,4 @@ dev-qt/qtwebengine accessibility opengl pulseaudio qml
 # required by dev-qt/qtwebengine-6.9.2-r1::gentoo[pulseaudio]
 # required by qtwebengine (argument)
 >=media-plugins/alsa-plugins-1.2.12 pulseaudio
+dev-qt/qtdeclarative accessibility opengl
