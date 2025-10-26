@@ -23,7 +23,7 @@ Include "/etc/ssh/ssh_config.d/*.conf"
 # Host *
 #   ForwardAgent no
 #   ForwardX11 no
-#   PasswordAuthentication yes
+   PasswordAuthentication yes
 #   HostbasedAuthentication no
 #   GSSAPIAuthentication no
 #   GSSAPIDelegateCredentials no
