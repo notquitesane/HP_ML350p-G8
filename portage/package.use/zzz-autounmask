@@ -23,3 +23,4 @@ dev-qt/qtwebengine accessibility opengl pulseaudio qml
 # required by qtwebengine (argument)
 >=media-plugins/alsa-plugins-1.2.12 pulseaudio
 dev-qt/qtdeclarative accessibility opengl
+net-libs/webkit-gtk X
