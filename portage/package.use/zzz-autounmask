@@ -50,3 +50,12 @@ x11-libs/gtk+ X
 # required by superslicer (argument)
 >=media-libs/qhull-2020.2.8.1_alpha6 static-libs
 gui-libs/gtk X
+# required by gui-libs/gtk-4.18.6-r1::gentoo[X]
+# required by net-libs/webkit-gtk-2.48.5-r600::gentoo
+# required by net-libs/webkit-gtk (argument)
+>=media-libs/mesa-25.1.9 X
+# required by x11-libs/pango-1.57.0::gentoo
+# required by gui-libs/gtk-4.18.6-r1::gentoo
+# required by net-libs/webkit-gtk-2.48.5-r600::gentoo
+# required by net-libs/webkit-gtk (argument)
+>=media-libs/freetype-2.14.1-r1 harfbuzz
