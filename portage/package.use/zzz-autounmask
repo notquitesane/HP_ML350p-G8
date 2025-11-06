@@ -49,3 +49,4 @@ x11-libs/gtk+ X
 # required by media-gfx/superslicer-2.5.59.10-r2::gentoo
 # required by superslicer (argument)
 >=media-libs/qhull-2020.2.8.1_alpha6 static-libs
+gui-libs/gtk X
