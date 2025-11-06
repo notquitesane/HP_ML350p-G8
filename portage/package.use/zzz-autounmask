@@ -59,3 +59,4 @@ gui-libs/gtk X
 # required by net-libs/webkit-gtk-2.48.5-r600::gentoo
 # required by net-libs/webkit-gtk (argument)
 >=media-libs/freetype-2.14.1-r1 harfbuzz
+dev-python/pycairo X
