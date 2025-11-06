@@ -25,3 +25,27 @@ dev-qt/qtwebengine accessibility opengl pulseaudio qml
 dev-qt/qtdeclarative accessibility opengl
 net-libs/webkit-gtk X
 x11-libs/gtk+ X
+# required by media-gfx/superslicer-2.5.59.10-r2::gentoo
+# required by superslicer (argument)
+>=x11-libs/wxGTK-3.2.8.1-r2 opengl X webkit
+# required by x11-libs/gtk+-3.24.50::gentoo
+# required by media-gfx/superslicer-2.5.59.10-r2::gentoo
+# required by superslicer (argument)
+>=media-libs/libepoxy-1.5.10-r3 X
+# required by x11-libs/gtk+-3.24.50::gentoo
+# required by media-gfx/superslicer-2.5.59.10-r2::gentoo
+# required by superslicer (argument)
+>=x11-libs/cairo-1.18.4-r1 X
+# required by net-libs/webkit-gtk-2.48.5-r410::gentoo
+# required by x11-libs/wxGTK-3.2.8.1-r2::gentoo[webkit,X]
+# required by media-gfx/superslicer-2.5.59.10-r2::gentoo
+# required by superslicer (argument)
+>=media-libs/harfbuzz-11.2.1 icu
+# required by net-libs/webkit-gtk-2.48.5-r410::gentoo[gstreamer]
+# required by x11-libs/wxGTK-3.2.8.1-r2::gentoo[webkit,X]
+# required by media-gfx/superslicer-2.5.59.10-r2::gentoo
+# required by superslicer (argument)
+>=media-libs/gst-plugins-base-1.24.11-r1 opengl X
+# required by media-gfx/superslicer-2.5.59.10-r2::gentoo
+# required by superslicer (argument)
+>=media-libs/qhull-2020.2.8.1_alpha6 static-libs
