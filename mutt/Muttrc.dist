@@ -23,7 +23,7 @@ macro index,pager,attach,compose \cb "\
 "call urlview to extract URLs out of a message"
 
 # Show documentation when pressing F1
-macro generic,pager <F1> "<shell-escape> less /usr/share/doc/mutt-2.2.12-r1/manual.txt<Enter>" "show Mutt documentation"
+macro generic,pager <F1> "<shell-escape> less /usr/share/doc/mutt-2.2.14-r1/manual.txt<Enter>" "show Mutt documentation"
 
 # show the incoming mailboxes list (just like "mutt -y") and back when pressing "y"
 # note: these macros have been subsumed by the <browse-mailboxes> function.
@@ -5547,6 +5547,25 @@ attachments   -I message/external-body
 # which contains mailbox-address keyid pair, and which can be manually
 # edited. This option points to the location of the private keys.
 # (S/MIME only)
+# 
+# 
+# set smime_pkcs7_default_smime_type="signed"
+#
+# Name: smime_pkcs7_default_smime_type
+# Type: string
+# Default: "signed"
+# 
+# 
+# The application/pkcs7-mime ``.p7m'' type can contain EnvelopedData
+# (encrypted) or SignedData.  Senders should add a ``smime-type''
+# parameter to the content type, to help receiving MUAs correctly
+# handle the data.  Unfortunately, some clients (e.g. Outlook)
+# don't add this parameter.
+# 
+# This option is used to determine which type to assume when the
+# ``smime-type'' parameter is missing for ``.p7m'' file types.
+# 
+# Accepted values are ``enveloped'' and ``signed''.
 # 
 # 
 # set smime_pk7out_command=""
