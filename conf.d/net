@@ -3,5 +3,5 @@ routes_eth0="default via 10.255.0.1"
 dns_servers="10.255.0.1 1.1.1.1"
 
 config_eth1="10.255.0.18/24"
-config_eno3="10.255.0.19/24"
-config_eno4="10.255.0.20=24"
+config_eno2="10.255.0.19/24"
+config_eno3="10.255.0.20=24"
