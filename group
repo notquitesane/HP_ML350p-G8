@@ -45,4 +45,4 @@ arpwatch:x:170:
 ngrep:x:185:
 sgx:x:405:
 shadow:x:42:
-jobserver:x:556:
+jobserver:x:556:portage
