@@ -1,15 +1,17 @@
-# for dcron 
+# Global variables
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=root
+HOME=/
 
-# dcron:
-# This is NOT the system crontab! dcron does not support a system crontab.
-# to get /etc/cron.{hourly|daily|weekly|montly} working with dcron run
-# crontab /etc/crontab
-# as root.
-# NOTE: This will REPLACE root's current crontab!!
+# For details see man 5 crontab
 
-# check scripts in cron.hourly, cron.daily, cron.weekly and cron.monthly
-59   *  * * *  rm -f /var/spool/cron/lastrun/cron.hourly
-9    3  * * *  rm -f /var/spool/cron/lastrun/cron.daily
-19   4  * * 6  rm -f /var/spool/cron/lastrun/cron.weekly
-29   5  1 * *  rm -f /var/spool/cron/lastrun/cron.monthly
-*/10 *  * * *  test -x /usr/sbin/run-crons && /usr/sbin/run-crons
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  * user-name  command to be executed
+
