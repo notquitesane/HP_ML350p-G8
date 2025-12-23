@@ -60,3 +60,4 @@ gui-libs/gtk X
 # required by net-libs/webkit-gtk (argument)
 >=media-libs/freetype-2.14.1-r1 harfbuzz
 dev-python/pycairo X
+net-misc/netifrc -dhcp
