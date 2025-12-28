@@ -1,3 +1,3 @@
 sys-kernel/installkernel dracut grub
-sys-kernel/linux-firmware deduplicate
+sys-kernel/linux-firmware deduplicate saved-config
 sys-kernel/zen-sources symlink
