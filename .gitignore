@@ -51,6 +51,8 @@ init.d/.depend.*
 openvpn/openvpn-status.log
 cups/subscriptions.conf
 cups/subscriptions.conf.O
+cups/printers.conf
+cups/printers.conf.O
 fake-hwclock.data
 check_mk/logwatch.state
 
