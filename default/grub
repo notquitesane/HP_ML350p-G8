@@ -85,3 +85,7 @@ GRUB_INIT_TUNE="60 800 1"
 GRUB_CMDLINE_LINUX_DEFAULT="net.ifnames=0 rootfstype=f2fs udev dolvm rd.udev.event_timeout=10 rd.lvm.wait=0 root=UUID=f70d0c9f-bb9b-4fe4-960b-b77b2be8cd01 rd.lvm.vg=vg root_trim=yes rd.info rd.debug rd.udev.debug"
 
 GRUB_PRELOAD_MODULES="lvm ext4 f2fs"
+
+GRUB_CMDLINE_XEN="console_timestamps=boot"
+
+
