@@ -47,3 +47,4 @@ sgx:x:405:
 shadow:x:42:
 jobserver:x:556:portage
 domuuser:x:1001:
+cuse:x:554:
