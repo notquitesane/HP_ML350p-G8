@@ -1,0 +1,4 @@
+>=x11-libs/cairo-1.18.4-r1 X
+>=x11-libs/libxkbcommon-1.10.0 X
+>=x11-libs/wxGTK-3.2.8.1-r2 opengl X webkit
+x11-libs/gtk+ X

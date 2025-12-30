@@ -1,3 +1,4 @@
+sys-kernel/gentoo-sources experimental symlink
 sys-kernel/installkernel dracut grub
-sys-kernel/linux-firmware deduplicate saved-config
+sys-kernel/linux-firmware deduplicate
 sys-kernel/zen-sources symlink

@@ -1,3 +1,0 @@
-# required by sys-block/hpacucli (argument)
-# /etc/portage/package.mask/all_categories:
-=sys-block/hpacucli-9.40.12.0

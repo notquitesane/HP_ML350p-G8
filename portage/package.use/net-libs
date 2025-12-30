@@ -1,2 +1,3 @@
 net-libs/libpcap -bluetooth netlink usb
 net-libs/nghttp2 jemalloc utils
+net-libs/webkit-gtk X

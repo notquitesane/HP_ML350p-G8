@@ -1,6 +1,0 @@
-# required by sys-apps/hponcfg (argument)
->=sys-apps/hponcfg-5.6.0.0-r1 hpe
-# required by sys-block/hpacucli (argument)
->=sys-block/hpacucli-9.40.12.0 hp-proliant-essentials
-# required by unrar (argument)
-=app-arch/unrar-7.2.1 unRAR

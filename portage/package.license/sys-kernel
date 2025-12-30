@@ -1,2 +1,1 @@
-sys-kernel/linux-firmware linux-fw-redistributable no-source-code
-sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE
+sys-kernel/linux-firmware linux-fw-redistributable no-source-code @BINARY-REDISTRIBUTABLE

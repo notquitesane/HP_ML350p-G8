@@ -1,2 +1,9 @@
-media-libs/freetype -infinality png utils fontforge
+>=media-libs/freetype-2.14.1-r1 harfbuzz
+>=media-libs/gst-plugins-base-1.24.11-r1 opengl X
+>=media-libs/harfbuzz-11.2.1 icu
+>=media-libs/libepoxy-1.5.10-r3 X
+>=media-libs/libglvnd-1.7.0 X
+>=media-libs/mesa-25.1.9 X
+>=media-libs/qhull-2020.2.8.1_alpha6 static-libs
+media-libs/freetype png utils fontforge
 media-libs/libpng apng
