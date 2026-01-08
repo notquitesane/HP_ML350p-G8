@@ -1,7 +1,13 @@
-config_eth0="10.255.0.17/24"
-routes_eth0="default via 10.255.0.1"
+# Physical interface: no IP
+config_eth0="null"
+
+# Bridge
+bridge_br0="eth0"
+config_br0="10.255.0.17/24"
+routes_br0="default via 10.255.0.1"
+
 dns_servers="10.255.0.1 1.1.1.1"
 
-config_eth1="10.255.0.18/24"
-config_eno2="10.255.0.19/24"
-config_eno3="10.255.0.20=24"
+#config_eth1="10.255.0.18/24"
+#config_eno2="10.255.0.19/24"
+#config_eno3="10.255.0.20/24"
