@@ -1,1 +1,3 @@
 sys-kernel/linux-firmware linux-fw-redistributable no-source-code @BINARY-REDISTRIBUTABLE
+# required by media-video/ffmpeg (argument)
+=media-video/ffmpeg-7.1.3 all-rights-reserved
