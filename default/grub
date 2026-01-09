@@ -82,12 +82,12 @@ GRUB_INIT_TUNE="60 800 1"
 
 #GRUB_PRELOAD_MODULES="lvm crypto ext4 luks"
 
-GRUB_CMDLINE_LINUX_DEFAULT="net.ifnames=0 rootfstype=f2fs root=UUID=f70d0c9f-bb9b-4fe4-960b-b77b2be8cd01 rd.lvm.lv=vg/usr root_trim=yes rd.info rd.debug rd.udev.debug"
+GRUB_CMDLINE_LINUX_DEFAULT="net.ifnames=0 rootfstype=f2fs root=UUID=f70d0c9f-bb9b-4fe4-960b-b77b2be8cd01 rd.lvm.cache=all rd.lvm.lv=vg/usr root_trim=yes rd.info rd.debug rd.udev.debug"
 
 GRUB_PRELOAD_MODULES="lvm ext4 f2fs"
 
 GRUB_CMDLINE_XEN="console_timestamps=boot"
 
-GRUB_CMDLINE_LINUX_XEN="rootfstype=f2fs root=UUID=f70d0c9f-bb9b-4fe4-960b-b77b2be8cd01 rd.lvm.lv=vg/usr"
+GRUB_CMDLINE_LINUX_XEN="rootfstype=f2fs root=UUID=f70d0c9f-bb9b-4fe4-960b-b77b2be8cd01 rd.lvm.cache=all rd.lvm.lv=vg/usr"
 
 
