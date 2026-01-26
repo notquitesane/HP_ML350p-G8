@@ -1,4 +1,4 @@
 >=dev-qt/qtbase-6.9.2 accessibility opengl
-dev-qt/qtbase X accessibility opengl
+dev-qt/qtbase X accessibility -opengl
 dev-qt/qtdeclarative accessibility opengl
 dev-qt/qtwebengine accessibility opengl pulseaudio qml

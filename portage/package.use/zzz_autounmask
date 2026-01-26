@@ -1,1 +1,2 @@
 media-video/ffmpeg fdk lame lzma ocr openh264 openssl opus sdl ssh svg theora vorbis x264 x265
+app-emulation/virtualbox -gui java -opengl -sdl vboxwebsrv
