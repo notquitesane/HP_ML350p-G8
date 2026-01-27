@@ -1,0 +1,3 @@
+VBOX_APP_HOME=/usr/lib64/virtualbox
+VBOX_SDK_PATH=/usr/lib64/virtualbox/sdk
+VBOX_INSTALL_PATH=/usr/lib64/virtualbox
