@@ -1,0 +1,1 @@
+SANDBOX_PREDICT="/dev/random:/proc/self/coredump_filter"
