@@ -90,4 +90,5 @@ GRUB_CMDLINE_XEN="console_timestamps=boot"
 
 GRUB_CMDLINE_LINUX_XEN="rootfstype=f2fs root=UUID=f70d0c9f-bb9b-4fe4-960b-b77b2be8cd01"
 
-
+GRUB_DEFAULT="saved"
+GRUB_SAVEDEFAULT="true"
