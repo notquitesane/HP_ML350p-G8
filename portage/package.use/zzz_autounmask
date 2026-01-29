@@ -1,5 +1,5 @@
 media-video/ffmpeg fdk lame lzma ocr openh264 openssl opus sdl ssh svg theora vorbis x264 x265
-app-emulation/virtualbox -gui java -opengl -sdl vboxwebsrv
+app-emulation/virtualbox -gui java lvm -opengl -sdl vboxwebsrv
 # required by dev-qt/qttools-6.10.1-r1::gentoo[widgets]
 # required by dev-qt/qttranslations-6.10.1::gentoo
 >=dev-qt/qtbase-6.10.1 -opengl
