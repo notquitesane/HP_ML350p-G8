@@ -48,3 +48,4 @@ shadow:x:42:
 jobserver:x:556:portage
 domuuser:x:1001:
 cuse:x:554:
+vboxusers:x:304:
