@@ -1,19 +1,20 @@
 # <fs>						<mountpoint>		<type>		<opts>		<dump/pass>
 
-
-UUID=2be8788c-5a6e-482f-8b64-bbfcbca15f1d	/boot			ext2		noauto,noatime		0 2
-UUID=f70d0c9f-bb9b-4fe4-960b-b77b2be8cd01	/			f2fs		noatime			0 1
+#Bare metal
+UUID=2be8788c-5a6e-482f-8b64-bbfcbca15f1d	/boot			ext2		rw,noauto,noatime		0 2
+UUID=f70d0c9f-bb9b-4fe4-960b-b77b2be8cd01	/			f2fs		rw,relatime,discard			0 1
 UUID=8c039ab8-3dbe-4692-bb5f-246a9647ed46	swap			sw		none			0 0
-UUID=2ce6d14d-e80b-4c95-8597-843f06995fa1	/var			ext4		defaults		0 0
-UUID=0a30389e-7c5f-494e-9774-3360a8e7312e	/home			ext4		defaults		0 0
-UUID=5e29f997-1624-4392-bc4f-ec926f57b478	/media			ext4		defaults		0 0
-UUID=dca66bf9-154b-40b4-a350-739fe0c0191b	/usr			ext4		defaults		0 0
-UUID=f2f1626e-bf95-4458-98b3-22347a1ce262	/var/cache/binpkgs	ext4		defaults		0 0
-UUID=7719cbba-9796-40d6-833d-6db4d57f71ae	/var/cache/distfiles	ext4		defaults		0 0
-UUID=c345a6da-56c5-4ab0-b5a9-ebea58ab2d3e	/usr/src		f2fs		defaults		0 0
+UUID=2ce6d14d-e80b-4c95-8597-843f06995fa1	/var			ext4		rw,relatime,stripe=1024		0 2
+UUID=0a30389e-7c5f-494e-9774-3360a8e7312e	/home			ext4		rw,relatime,stripe=1280		0 2
+UUID=5e29f997-1624-4392-bc4f-ec926f57b478	/media			ext4		rw,relatime,stripe=2560		0 2
+UUID=dca66bf9-154b-40b4-a350-739fe0c0191b	/usr			ext4		rw,relatime,stripe=1280		0 2
+UUID=f2f1626e-bf95-4458-98b3-22347a1ce262	/var/cache/binpkgs	ext4		rw,relatime,stripe=1280         0 2
+UUID=7719cbba-9796-40d6-833d-6db4d57f71ae	/var/cache/distfiles	ext4		rw,relatime,stripe=1280         0 2
+UUID=c345a6da-56c5-4ab0-b5a9-ebea58ab2d3e	/usr/src		f2fs		rw,relatime,discard		0 2
 
-/dev/shm					/var/tmp		tmpfs		size=10G,mode=1775	0 0
-/tmp						/dev/shm		tmpfs		nodev,nosuid,noexec	0 0
+#TMPFS
+tmpfs						/var/tmp		tmpfs		size=10G,mode=1775	0 0
+tmpfs						/tmp			tmpfs		nodev,nosuid,noexec	0 0
 
 #nfs exports
 
