@@ -1,0 +1,6 @@
+# required by =app-misc/jdupes-9999 (argument)
+=app-misc/jdupes-9999 **
+# required by app-misc/jdupes-9999::gentoo
+# required by @selected
+# required by @world (argument)
+=dev-libs/libjodycode-4.0.1 ~amd64
