@@ -3,3 +3,5 @@ sys-kernel/linux-firmware linux-fw-redistributable no-source-code @BINARY-REDIST
 =media-video/ffmpeg-7.1.3 all-rights-reserved
 # required by app-emulation/virtualbox-extpack-oracle (argument)
 >=app-emulation/virtualbox-extpack-oracle-7.2.4 PUEL-12
+# required by unrar (argument)
+=app-arch/unrar-7.2.3 unRAR
