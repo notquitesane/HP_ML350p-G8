@@ -4,3 +4,7 @@
 # required by @selected
 # required by @world (argument)
 =dev-libs/libjodycode-4.0.1 ~amd64
+# required by media-gfx/sweethome3d-bin (argument)
+=media-gfx/sweethome3d-bin-7.5 ~amd64
+# required by x11-misc/dotool (argument)
+=x11-misc/dotool-1.5 ~amd64
