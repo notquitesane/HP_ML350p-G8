@@ -33,7 +33,7 @@ man:x:15:
 openvpn:x:248:
 nullmail:x:88:
 messagebus:x:247:
-cron:x:16:
+cron:x:16:nqs
 crontab:x:246:
 sagan:x:245:
 lpadmin:x:106:
