@@ -8,3 +8,5 @@
 =media-gfx/sweethome3d-bin-7.5 ~amd64
 # required by x11-misc/dotool (argument)
 =x11-misc/dotool-1.5 ~amd64
+# required by sci-biology/foldingathome (argument)
+=sci-biology/foldingathome-7.6.21 ~amd64
