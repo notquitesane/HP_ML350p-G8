@@ -25,25 +25,6 @@ depend() {
 	# Entropy can be used by ssh-keygen, among other things, but
 	# is not strictly required (bug 470020).
 	use logger dns entropy
-	if [ "${rc_need+set}" = "set" ] ; then
-		: # Do nothing, the user has explicitly set rc_need
-	else
-		local x warn_addr
-		for x in $(awk '/^ListenAddress/{ print $2 }' "$SSHD_CONFIG" 2>/dev/null) ; do
-			case "${x}" in
-				0.0.0.0|0.0.0.0:*) ;;
-				::|\[::\]*) ;;
-				*) warn_addr="${warn_addr} ${x}" ;;
-			esac
-		done
-		if [ -n "${warn_addr}" ] ; then
-			need net
-			ewarn "You are binding an interface in ListenAddress statement in your sshd_config!"
-			ewarn "You must add rc_need=\"net.FOO\" to your ${RC_PREFIX%/}/etc/conf.d/sshd"
-			ewarn "where FOO is the interface(s) providing the following address(es):"
-			ewarn "${warn_addr}"
-		fi
-	fi
 }
 
 checkconfig() {

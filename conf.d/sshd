@@ -31,3 +31,8 @@ SSHD_OPTS=""
 # Path to the ssh-keygen binary (needs to be absolute path).
 
 #SSHD_KEYGEN_BINARY="${RC_PREFIX%/}/usr/bin/ssh-keygen"
+
+
+# May be needed if ListenAddress is used to ensure that the interface
+# has been configured.
+#rc_need="net.eth0"
