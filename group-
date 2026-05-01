@@ -17,7 +17,7 @@ audio::18:
 cdrom::19:
 dialout::20:
 tape::26:root
-video::27:root
+video::27:root,foldingathome
 cdrw::80:
 usb::85:
 input::97:

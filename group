@@ -27,7 +27,7 @@ utmp:x:406:
 nogroup::65533:
 nobody::65534:
 sshd:x:22:
-kvm:x:78:
+kvm:x:78:nqs
 render:x:249:
 man:x:15:
 openvpn:x:248:
