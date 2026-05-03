@@ -3,7 +3,7 @@
 #Bare metal
 UUID=2be8788c-5a6e-482f-8b64-bbfcbca15f1d	/boot				ext2		rw,noauto,noatime		0 2
 UUID=f70d0c9f-bb9b-4fe4-960b-b77b2be8cd01	/				f2fs		rw,relatime,discard		0 1
-UUID=8c039ab8-3dbe-4692-bb5f-246a9647ed46	swap				sw		none				0 0
+/dev/vg/swap					swap				sw		none				0 0
 UUID=2ce6d14d-e80b-4c95-8597-843f06995fa1	/var				ext4		rw,relatime,stripe=1024		0 2
 UUID=0a30389e-7c5f-494e-9774-3360a8e7312e	/home				ext4		rw,relatime,stripe=1280		0 2
 UUID=5e29f997-1624-4392-bc4f-ec926f57b478	/media				ext4		rw,relatime,stripe=2560		0 2
