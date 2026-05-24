@@ -9,3 +9,5 @@ sys-kernel/linux-firmware linux-fw-redistributable no-source-code @BINARY-REDIST
 >=sci-biology/foldingathome-7.6.21 FAH-EULA-2014 FAH-special-permission
 # required by unrar (argument)
 =app-arch/unrar-7.2.4 unRAR
+app-arch/unrar unRAR
+media-video/ffmpeg all-rights-reserved
