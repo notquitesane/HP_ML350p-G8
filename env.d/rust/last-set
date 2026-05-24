@@ -7,3 +7,7 @@
 /usr/lib/rust/lib
 /usr/lib/rust/man
 /usr/share/doc/rust
+/usr/bin/clippy-driver
+/usr/bin/cargo-clippy
+/usr/bin/rustfmt
+/usr/bin/cargo-fmt
