@@ -1,0 +1,2 @@
+LDPATH="/usr/lib64/fltk"
+FLTK_DOCDIR=""/usr/share/doc/"fltk-1.3.8"/html
