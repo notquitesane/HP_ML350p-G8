@@ -3,3 +3,4 @@
 /export/distfiles	10.255.0.0/24(no_root_squash,insecure,rw,sync,no_subtree_check)
 /export/home		10.255.0.0/24(no_root_squash,insecure,rw,sync,no_subtree_check)
 /export/media		10.255.0.0/24(no_root_squash,insecure,rw,sync,no_subtree_check)
+/export/repos		10.255.0.0/24(no_root_squash,insecure,rw,sync,no_subtree_check)
