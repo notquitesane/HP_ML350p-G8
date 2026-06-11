@@ -23,7 +23,7 @@ macro index,pager,attach,compose \cb "\
 "call urlview to extract URLs out of a message"
 
 # Show documentation when pressing F1
-macro generic,pager <F1> "<shell-escape> less /usr/share/doc/mutt-2.2.16/manual.txt<Enter>" "show Mutt documentation"
+macro generic,pager <F1> "<shell-escape> less /usr/share/doc/mutt-2.3.2/manual.txt<Enter>" "show Mutt documentation"
 
 # show the incoming mailboxes list (just like "mutt -y") and back when pressing "y"
 # note: these macros have been subsumed by the <browse-mailboxes> function.
@@ -2431,6 +2431,29 @@ attachments   -I message/external-body
 # Note: this feature is currently experimental.  If you experience
 # strange behavior, such as duplicate or missing messages please
 # file a bug report to let us know.
+# 
+# 
+# set imap_reconnect_sleep=5
+#
+# Name: imap_reconnect_sleep
+# Type: number
+# Default: 5
+# 
+# 
+# When mutt fails to reconnect to a lost IMAP server connection, it
+# will sleep this many seconds before trying again.
+# 
+# 
+# set imap_reconnect_tries=3
+#
+# Name: imap_reconnect_tries
+# Type: number
+# Default: 3
+# 
+# 
+# When mutt loses its connection with the IMAP server, it will try
+# to reconnect this many times before giving up and closing the
+# connection.
 # 
 # 
 # set imap_servernoise=yes
@@ -5758,6 +5781,30 @@ attachments   -I message/external-body
 # Also see $write_bcc.
 # 
 # 
+# set socket_receive_timeout=0
+#
+# Name: socket_receive_timeout
+# Type: number
+# Default: 0
+# 
+# 
+# Causes Mutt to timeout any socket read operation (e.g. SSL_read) after
+# this many seconds.  A zero (default) or negative value causes Mutt to wait
+# indefinitely for the read to complete.
+# 
+# 
+# set socket_send_timeout=0
+#
+# Name: socket_send_timeout
+# Type: number
+# Default: 0
+# 
+# 
+# Causes Mutt to timeout any socket write operation (e.g. SSL_write) after
+# this many seconds.  A zero (default) or negative value causes Mutt to wait
+# indefinitely for the write to complete.
+# 
+# 
 # set sort=date
 #
 # Name: sort
@@ -5942,10 +5989,13 @@ attachments   -I message/external-body
 # Default: ""
 # 
 # 
-# If your spool mailbox is in a non-default place where Mutt cannot find
-# it, you can specify its location with this variable.  Mutt will
+# If your default mailbox or spool file is in a non-default place where Mutt
+# cannot find it, you can specify its location with this variable. Mutt will
 # initially set this variable to the value of the environment
 # variable $MAIL or $MAILDIR if either is defined.
+# 
+# Note: Despite the name, this can refer to a local or remote mailbox, e.g.,
+# "+INBOX".
 # 
 # 
 # set ssl_ca_certificates_file=""
