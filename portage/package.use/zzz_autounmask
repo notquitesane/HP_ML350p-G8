@@ -4,3 +4,4 @@ app-emulation/virtualbox -gui java lvm -opengl -sdl vboxwebsrv
 # required by dev-qt/qttranslations-6.10.1::gentoo
 >=dev-qt/qtbase-6.10.1 -opengl
 net-misc/tigervnc -opengl
+app-emulation/xen uefi
