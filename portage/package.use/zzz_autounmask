@@ -5,3 +5,5 @@ app-emulation/virtualbox -gui java lvm -opengl -sdl vboxwebsrv
 >=dev-qt/qtbase-6.10.1 -opengl
 net-misc/tigervnc -opengl
 app-emulation/xen uefi
+app-emulation/qemu usb usbredir xen
+app-emulation/qemu QEMU_SOFTMMU_TARGETS: i386 x86_64
