@@ -12,3 +12,5 @@
 =sci-biology/foldingathome-7.6.21 ~amd64
 # required by sys-block/hdrecover (argument)
 =sys-block/hdrecover-0.5 ~amd64
+# required by =net-misc/yt-dlp-9999 (argument)
+=net-misc/yt-dlp-9999 **
