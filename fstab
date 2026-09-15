@@ -1,7 +1,7 @@
 # <fs>						<mountpoint>			<type>		<opts>		<dump/pass>
 
 #Bare metal
-UUID=2be8788c-5a6e-482f-8b64-bbfcbca15f1d	/boot				ext2		rw,noauto,noatime		0 2
+UUID=73551806-3cc9-4a06-aedb-2e877f10089d	/boot				ext2		rw,noauto,noatime		0 0 
 UUID=f70d0c9f-bb9b-4fe4-960b-b77b2be8cd01	/				f2fs		rw,relatime,discard		0 1
 /dev/vg/swap					swap				swap		none				0 0
 UUID=2ce6d14d-e80b-4c95-8597-843f06995fa1	/var				ext4		rw,relatime,stripe=1024		0 2
