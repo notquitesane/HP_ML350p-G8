@@ -14,3 +14,5 @@
 =sys-block/hdrecover-0.5 ~amd64
 # required by =net-misc/yt-dlp-9999 (argument)
 =net-misc/yt-dlp-9999 **
+# required by showem (argument)
+=app-portage/showem-1.0.6 ~amd64
