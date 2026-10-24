@@ -11,3 +11,5 @@ sys-kernel/linux-firmware linux-fw-redistributable no-source-code @BINARY-REDIST
 =app-arch/unrar-7.2.4 unRAR
 app-arch/unrar unRAR
 media-video/ffmpeg all-rights-reserved
+# required by iozone (argument)
+>=app-benchmarks/iozone-3.508 freedist
